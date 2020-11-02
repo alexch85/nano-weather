@@ -1,3 +1,6 @@
+@import 'themes.scss';
+
 .app {
 	text-align: center;
+	color: map-get($colors, main-color);
 }
