@@ -7,18 +7,20 @@
 	color: white;
 	display: flex;
 	flex-direction: column;
+	font-size: 1.2rem;
 }
 
 .navContainer {
-	padding: 5px;
+	margin: 20px 0 0 20px;
+	align-self: flex-start;
+	box-sizing: border-box;
 }
 .dateContainer {
-	margin-top: 45px;
 	box-sizing: border-box;
 	margin-bottom: 10px;
 }
 .tempContainer {
-	font-size: 4rem;
+	font-size: 4.5rem;
 	box-sizing: border-box;
 	margin: 60px auto 0;
 	padding: 0;
@@ -40,10 +42,11 @@
 	align-self: flex-start;
 	padding: 5px;
 	margin: 10px;
-	height: 50px;
+	height: 45px;
 	margin-top: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
+	font-size: 0.9rem;
 }

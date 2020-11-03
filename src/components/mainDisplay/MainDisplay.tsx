@@ -4,11 +4,14 @@ import location from '../../assets/icons/location.svg';
 import weather from '../../assets/icons/sun-cloudy.svg';
 import windFlag from '../../assets/icons/flag.svg';
 import humidity from '../../assets/icons/wet-1.svg';
+import options from '../../assets/icons/options.svg';
 
 const MainDisplay: React.FC = () => {
 	return (
 		<div className={styles.mainDisplayContainer}>
-			<div className={styles.navContainer}>navigation</div>
+			<div className={styles.navContainer}>
+				<img alt='location' src={options} height='20px' />
+			</div>
 			<div className={styles.dateContainer}>{new Date().toDateString()}</div>
 			<div className={styles.locationContainer}>
 				<img alt='location' src={location} height='15px' style={{ marginRight: '5px' }} />
@@ -21,10 +24,17 @@ const MainDisplay: React.FC = () => {
 			</div>
 			<div className={styles.sideContainer}>
 				<div className={styles.humidContainer}>
-					<img alt='location' src={humidity} height='15px' style={{ marginRight: '5px' }} />
+					<img
+						alt='location'
+						src={humidity}
+						height='15px'
+						style={{ marginRight: '5px', marginLeft: '-2px' }}
+					/>
+					52%
 				</div>
 				<div className={styles.windContainer}>
-					<img alt='location' src={windFlag} height='15px' style={{ marginRight: '5px' }} />
+					<img alt='location' src={windFlag} height='12px' style={{ marginRight: '5px' }} />
+					North-west 5 meters per hour
 				</div>
 			</div>
 		</div>
