@@ -1,3 +1,7 @@
 .mainDisplayContainer {
-	background-image: url('assets\backgrounds\bg-mobile-clear-dawn.jpg');
+	background-image: url('../../assets/backgrounds/bg-mobile-clear-dawn@2x.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 60vh;
+	width: 100%;
 }
