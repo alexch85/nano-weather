@@ -1,7 +1,49 @@
 .mainDisplayContainer {
 	background-image: url('../../assets/backgrounds/bg-mobile-clear-dawn@2x.jpg');
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
-	height: 60vh;
+	height: 70vh;
 	width: 100%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.navContainer {
+	padding: 5px;
+}
+.dateContainer {
+	margin-top: 45px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+.tempContainer {
+	font-size: 4rem;
+	box-sizing: border-box;
+	margin: 60px auto 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.tempContainer p {
+	margin: 0;
+}
+
+.weatherContainer {
+	font-size: 1.3rem;
+	margin: -5px auto 0;
+	display: flex;
+	align-items: center;
+}
+
+.sideContainer {
+	align-self: flex-start;
+	padding: 5px;
+	margin: 10px;
+	height: 50px;
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
 }

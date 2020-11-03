@@ -1,5 +1,12 @@
 @import 'themes.scss';
 
+body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .app {
 	text-align: center;
 	color: map-get($colors, main-color);
