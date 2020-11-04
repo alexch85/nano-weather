@@ -1,5 +1,4 @@
 .mainDisplayContainer {
-	background-image: url('../../assets/backgrounds/bg-mobile-clear-dawn@2x.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 70vh;
@@ -8,6 +7,10 @@
 	display: flex;
 	flex-direction: column;
 	font-size: 1.2rem;
+}
+
+.mainDisplayContainer img {
+	margin-right: 5px;
 }
 
 .navContainer {

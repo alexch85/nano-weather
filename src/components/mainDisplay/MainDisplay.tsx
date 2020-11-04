@@ -8,18 +8,21 @@ import options from '../../assets/icons/options.svg';
 
 const MainDisplay: React.FC = () => {
 	return (
-		<div className={styles.mainDisplayContainer}>
+		<div
+			className={styles.mainDisplayContainer}
+			style={{ backgroundImage: 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg)' }}
+		>
 			<div className={styles.navContainer}>
 				<img alt='location' src={options} height='20px' />
 			</div>
 			<div className={styles.dateContainer}>{new Date().toDateString()}</div>
 			<div className={styles.locationContainer}>
-				<img alt='location' src={location} height='15px' style={{ marginRight: '5px' }} />
+				<img alt='location' src={location} height='15px' />
 				Madrid
 			</div>
 			<div className={styles.tempContainer}>21°</div>
 			<div className={styles.weatherContainer}>
-				<img alt='location' src={weather} height='25px' style={{ marginRight: '5px' }} />
+				<img alt='location' src={weather} height='25px' />
 				cloudy
 			</div>
 			<div className={styles.sideContainer}>
@@ -33,7 +36,7 @@ const MainDisplay: React.FC = () => {
 					52%
 				</div>
 				<div className={styles.windContainer}>
-					<img alt='location' src={windFlag} height='12px' style={{ marginRight: '5px' }} />
+					<img alt='location' src={windFlag} height='12px' />
 					North-west 5 meters per hour
 				</div>
 			</div>
