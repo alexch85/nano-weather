@@ -13,7 +13,7 @@ const MainDisplay: React.FC = () => {
 			style={{ backgroundImage: 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg)' }}
 		>
 			<div className={styles.navContainer}>
-				<img alt='location' src={options} height='20px' />
+				<img alt='options' src={options} height='20px' />
 			</div>
 			<div className={styles.dateContainer}>{new Date().toDateString()}</div>
 			<div className={styles.locationContainer}>
@@ -22,13 +22,13 @@ const MainDisplay: React.FC = () => {
 			</div>
 			<div className={styles.tempContainer}>21°</div>
 			<div className={styles.weatherContainer}>
-				<img alt='location' src={weather} height='25px' />
+				<img alt='weather' src={weather} height='25px' />
 				cloudy
 			</div>
 			<div className={styles.sideContainer}>
 				<div className={styles.humidContainer}>
 					<img
-						alt='location'
+						alt='humidity'
 						src={humidity}
 						height='15px'
 						style={{ marginRight: '5px', marginLeft: '-2px' }}
@@ -36,7 +36,7 @@ const MainDisplay: React.FC = () => {
 					52%
 				</div>
 				<div className={styles.windContainer}>
-					<img alt='location' src={windFlag} height='12px' />
+					<img alt='wind' src={windFlag} height='12px' />
 					North-west 5 meters per hour
 				</div>
 			</div>
