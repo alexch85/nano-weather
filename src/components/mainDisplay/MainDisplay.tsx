@@ -6,17 +6,7 @@ import windFlag from '../../assets/icons/flag.svg';
 import humidityIcon from '../../assets/icons/wet-1.svg';
 import options from '../../assets/icons/options.svg';
 import { fetchWeather } from '../../api/index';
-
-interface todayWeather {
-	temp: number;
-	humidity: number;
-	tempMin: number;
-	tempMax: number;
-	feelsLike: number;
-	windSpeed: number;
-	mainWeather: string;
-	cityName: string;
-}
+import { todayWeather } from '../../interfaces';
 
 const MainDisplay: React.FC = () => {
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({

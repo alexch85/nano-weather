@@ -15,7 +15,6 @@ export const fetchWeather = async () => {
 	} = await axios.get(url);
 	console.log(temp, humidity, weather);
 	const [destructuredWeather] = weather;
-
 	const { main } = destructuredWeather;
 
 	return {
