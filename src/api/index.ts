@@ -3,12 +3,7 @@ import axios from 'axios';
 const APIkey: string = '8b308b3f70fca17e387bd8aab2c848e4';
 
 export const fetchWeather = async (lat: number, lon: number) => {
-	let url: string;
-	if (lat !== 0 && lon !== 0) {
-		url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${APIkey}`;
-	} else {
-		url = `http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=${APIkey}`;
-	}
+	let url: string = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${APIkey}`;
 	const {
 		data: {
 			main: { temp, humidity, temp_max, temp_min, feels_like },
