@@ -8,3 +8,8 @@ export interface todayWeather {
 	mainWeather: string;
 	cityName: string;
 }
+
+export interface mainDisplayI {
+	lat: number;
+	lon: number;
+}

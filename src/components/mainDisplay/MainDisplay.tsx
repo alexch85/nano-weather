@@ -6,9 +6,9 @@ import windFlag from '../../assets/icons/flag.svg';
 import humidityIcon from '../../assets/icons/wet-1.svg';
 import options from '../../assets/icons/options.svg';
 import { fetchWeather } from '../../api/index';
-import { todayWeather } from '../../interfaces';
+import { mainDisplayI, todayWeather } from '../../interfaces';
 
-const MainDisplay: React.FC = () => {
+const MainDisplay: React.FC<mainDisplayI> = ({ lat, lon }) => {
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({
 		temp: 0,
 		humidity: 0,
@@ -21,11 +21,12 @@ const MainDisplay: React.FC = () => {
 	});
 
 	useEffect(() => {
+		console.log(lat, lon);
 		const fetchAPI = async () => {
-			setTodayWeather(await fetchWeather());
+			setTodayWeather(await fetchWeather(lat, lon));
 		};
 		fetchAPI();
-	}, []);
+	}, [lat, lon]);
 
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName } = todayWeather;
 
