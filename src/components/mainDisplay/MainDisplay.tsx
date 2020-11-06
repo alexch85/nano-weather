@@ -38,7 +38,6 @@ const MainDisplay: React.FC<mainDisplayI> = ({ lat, lon }) => {
 			<div className={styles.navContainer}>
 				<img alt='options' src={options} height='20px' />
 			</div>
-			<div className={styles.dateContainer}>{new Date().toDateString()}</div>
 			<div className={styles.locationContainer}>
 				<img alt='location' src={location} height='15px' />
 				{cityName}

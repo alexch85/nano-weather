@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './App.module.scss';
+import DailyWeather from './components/dailyWeather/DailyWeather';
 import MainDisplay from './components/mainDisplay/MainDisplay';
 
 const App: React.FC = () => {
@@ -13,12 +14,13 @@ const App: React.FC = () => {
 				setLon(position.coords.longitude);
 			});
 		} else {
-			console.log('Not Available');
+			alert('Geolocation is not supported by your browser');
 		}
 	}, []);
 	return (
 		<div className={styles.app}>
 			<MainDisplay lat={lat} lon={lon} />
+			<DailyWeather />
 		</div>
 	);
 };
