@@ -1,8 +1,8 @@
 import React from 'react';
-import { backgroundPropsI } from '../../../interfaces';
+import { bgWrapperPropsI } from '../../../interfaces';
 import styles from './BgWrapper.module.scss';
 
-const bgWrapper = (props: backgroundPropsI) => {
+const bgWrapper = (props: bgWrapperPropsI) => {
 	const date = new Date();
 	const time = date.getHours();
 

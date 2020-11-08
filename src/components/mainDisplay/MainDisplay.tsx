@@ -1,36 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './MainDisplay.module.scss';
 import location from '../../assets/icons/location.svg';
 import weatherIcon from '../../assets/icons/sun-cloudy.svg';
 import windFlag from '../../assets/icons/flag.svg';
 import humidityIcon from '../../assets/icons/wet-1.svg';
 import options from '../../assets/icons/options.svg';
-import { fetchWeather } from '../../api/index';
-import { mainDisplayI, todayWeather } from '../../interfaces';
+import { mainDisplayI } from '../../interfaces';
 import BgWrapper from '../UI/bgWrapper/BgWrapper';
 
-const MainDisplay: React.FC<mainDisplayI> = ({ lat, lon }) => {
-	const [todayWeather, setTodayWeather] = useState<todayWeather>({
-		temp: 0,
-		humidity: 0,
-		tempMax: 0,
-		tempMin: 0,
-		feelsLike: 0,
-		windSpeed: 0,
-		mainWeather: '',
-		cityName: '',
-	});
-
-	useEffect(() => {
-		console.log(lat, lon);
-		const fetchAPI = async () => {
-			setTodayWeather(await fetchWeather(lat, lon));
-		};
-		fetchAPI();
-	}, [lat, lon]);
-
-	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName } = todayWeather;
-
+const MainDisplay: React.FC<mainDisplayI> = ({ temp, humidity, feelsLike, windSpeed, mainWeather, cityName }) => {
 	return (
 		<BgWrapper>
 			<div className={styles.navContainer}>

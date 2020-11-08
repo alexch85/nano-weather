@@ -10,10 +10,14 @@ export interface todayWeather {
 }
 
 export interface mainDisplayI {
-	lat: number;
-	lon: number;
+	temp: number;
+	humidity: number;
+	feelsLike: number;
+	windSpeed: number;
+	mainWeather: string;
+	cityName: string;
 }
 
-export interface backgroundPropsI {
+export interface bgWrapperPropsI {
 	children: React.ReactNode;
 }
