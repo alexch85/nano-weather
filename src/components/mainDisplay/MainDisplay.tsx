@@ -7,6 +7,7 @@ import humidityIcon from '../../assets/icons/wet-1.svg';
 import options from '../../assets/icons/options.svg';
 import { fetchWeather } from '../../api/index';
 import { mainDisplayI, todayWeather } from '../../interfaces';
+import BgWrapper from '../UI/bgWrapper/BgWrapper';
 
 const MainDisplay: React.FC<mainDisplayI> = ({ lat, lon }) => {
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({
@@ -31,10 +32,7 @@ const MainDisplay: React.FC<mainDisplayI> = ({ lat, lon }) => {
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName } = todayWeather;
 
 	return (
-		<div
-			className={styles.mainDisplayContainer}
-			style={{ backgroundImage: 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg)' }}
-		>
+		<BgWrapper>
 			<div className={styles.navContainer}>
 				<img alt='options' src={options} height='20px' />
 			</div>
@@ -64,7 +62,7 @@ const MainDisplay: React.FC<mainDisplayI> = ({ lat, lon }) => {
 					North-west {windSpeed} meters per hour
 				</div>
 			</div>
-		</div>
+		</BgWrapper>
 	);
 };
 
