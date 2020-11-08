@@ -1,13 +1,11 @@
 import React from 'react';
+import { backgroundPropsI } from '../../../interfaces';
 import styles from './BgWrapper.module.scss';
 
-export interface backgroundProps {
-	children: React.ReactNode;
-}
+const bgWrapper = (props: backgroundPropsI) => {
+	const date = new Date();
+	const time = date.getHours();
 
-const bgWrapper = (props: backgroundProps) => {
-	const daytime = new Date();
-	const time = daytime.getHours();
 	let background = '';
 	if (time > 6 && time < 12) {
 		background = 'url(backgrounds/bg-mobile-clear-dawn@2x.jpg';
@@ -19,7 +17,7 @@ const bgWrapper = (props: backgroundProps) => {
 		background = 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg';
 	}
 	if (time > 20 || time < 6) {
-		background = 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg';
+		background = 'url(backgrounds/bg-mobile-clear-night@2x.jpg';
 	}
 
 	return (

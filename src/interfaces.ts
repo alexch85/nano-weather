@@ -13,3 +13,7 @@ export interface mainDisplayI {
 	lat: number;
 	lon: number;
 }
+
+export interface backgroundPropsI {
+	children: React.ReactNode;
+}
