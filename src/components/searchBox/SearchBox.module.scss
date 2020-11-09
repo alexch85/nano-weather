@@ -1,0 +1,36 @@
+@import 'themes.scss';
+
+.searchBoxContainer {
+	height: 200px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+}
+.searchBoxContainer img {
+	align-self: center;
+	height: 70px;
+}
+
+.searchBoxContainer h3 {
+	margin: 0;
+	color: #333;
+}
+
+.searchBoxContainer input,
+.searchBoxContainer input:focus,
+.searchBoxContainer input:active {
+	border: none;
+	border-bottom: 1px solid #333;
+	outline: none;
+}
+
+.selectBtn {
+	padding: 10px 10px;
+	background: map-get($colors, main-purple);
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
