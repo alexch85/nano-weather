@@ -16,6 +16,7 @@ export interface mainDisplayI {
 	windSpeed: number;
 	mainWeather: string;
 	cityName: string;
+	searchModeToggle: () => void;
 }
 
 export interface bgWrapperPropsI {
@@ -25,4 +26,8 @@ export interface bgWrapperPropsI {
 export interface dailyWeatherPropsI {
 	tempMin: number;
 	tempMax: number;
+}
+
+export interface navPropsI {
+	searchModeToggle: () => void;
 }

@@ -4,16 +4,22 @@ import location from '../../assets/icons/location.svg';
 import weatherIcon from '../../assets/icons/sun-cloudy.svg';
 import windFlag from '../../assets/icons/flag.svg';
 import humidityIcon from '../../assets/icons/wet-1.svg';
-import options from '../../assets/icons/options.svg';
 import { mainDisplayI } from '../../interfaces';
 import BgWrapper from '../UI/bgWrapper/BgWrapper';
+import Navigation from '../navigation/Navigation';
 
-const MainDisplay: React.FC<mainDisplayI> = ({ temp, humidity, feelsLike, windSpeed, mainWeather, cityName }) => {
+const MainDisplay: React.FC<mainDisplayI> = ({
+	temp,
+	humidity,
+	feelsLike,
+	windSpeed,
+	mainWeather,
+	cityName,
+	searchModeToggle,
+}) => {
 	return (
 		<BgWrapper>
-			<div className={styles.navContainer}>
-				<img alt='options' src={options} height='20px' />
-			</div>
+			<Navigation searchModeToggle={searchModeToggle} />
 			<div className={styles.locationContainer}>
 				<img alt='location' src={location} height='15px' />
 				{cityName}

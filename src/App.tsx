@@ -6,6 +6,8 @@ import MainDisplay from './components/mainDisplay/MainDisplay';
 import { todayWeather } from './interfaces';
 
 const App: React.FC = () => {
+	const [searchMode, setSearchMode] = useState(false);
+
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({
@@ -30,7 +32,6 @@ const App: React.FC = () => {
 			alert('Geolocation is not supported by your browser');
 		}
 	}, []);
-
 	useEffect(() => {
 		console.log(lat, lon);
 		const fetchAPI = async () => {
@@ -39,10 +40,15 @@ const App: React.FC = () => {
 		fetchAPI();
 	}, [lat, lon]);
 
+	const toggleSearchModeHandler = () => {
+		setSearchMode((prevSearchMode) => !prevSearchMode);
+	};
+
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax } = todayWeather;
 	return (
 		<div className={styles.app}>
 			<MainDisplay
+				searchModeToggle={toggleSearchModeHandler}
 				temp={temp}
 				humidity={humidity}
 				feelsLike={feelsLike}
