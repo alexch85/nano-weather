@@ -39,7 +39,7 @@ const App: React.FC = () => {
 		fetchAPI();
 	}, [lat, lon]);
 
-	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName } = todayWeather;
+	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax } = todayWeather;
 	return (
 		<div className={styles.app}>
 			<MainDisplay
@@ -50,7 +50,7 @@ const App: React.FC = () => {
 				mainWeather={mainWeather}
 				cityName={cityName}
 			/>
-			<DailyWeather />
+			<DailyWeather tempMin={tempMin} tempMax={tempMax} />
 		</div>
 	);
 };

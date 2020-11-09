@@ -21,3 +21,8 @@ export interface mainDisplayI {
 export interface bgWrapperPropsI {
 	children: React.ReactNode;
 }
+
+export interface dailyWeatherPropsI {
+	tempMin: number;
+	tempMax: number;
+}
