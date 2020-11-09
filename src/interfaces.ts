@@ -19,8 +19,13 @@ export interface mainDisplayI {
 	searchModeToggle: () => void;
 }
 
-export interface bgWrapperPropsI {
+export interface wrapperPropsI {
 	children: React.ReactNode;
+}
+
+export interface backdropWrapperPropsI {
+	children: React.ReactNode;
+	searchModeToggle: () => void;
 }
 
 export interface dailyWeatherPropsI {

@@ -1,12 +1,16 @@
 @import 'themes.scss';
 
 .searchBoxContainer {
-	height: 200px;
+	height: 230px;
 	width: 300px;
+	margin: 0 auto;
+	padding: 10px 10px 20px;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
 	justify-content: space-between;
+	background: #fff;
+	border-radius: 5px;
 }
 .searchBoxContainer img {
 	align-self: center;

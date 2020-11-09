@@ -1,8 +1,8 @@
 import React from 'react';
-import { bgWrapperPropsI } from '../../../interfaces';
+import { wrapperPropsI } from '../../../interfaces';
 import styles from './BgWrapper.module.scss';
 
-const bgWrapper = (props: bgWrapperPropsI) => {
+const bgWrapper: React.FC<wrapperPropsI> = ({ children }) => {
 	const date = new Date();
 	const time = date.getHours();
 
@@ -22,7 +22,7 @@ const bgWrapper = (props: bgWrapperPropsI) => {
 
 	return (
 		<div className={styles.bgWrapper} style={{ backgroundImage: background }}>
-			{props.children}
+			{children}
 		</div>
 	);
 };

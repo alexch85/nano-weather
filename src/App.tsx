@@ -3,6 +3,8 @@ import { fetchWeather } from './api';
 import styles from './App.module.scss';
 import DailyWeather from './components/dailyWeather/DailyWeather';
 import MainDisplay from './components/mainDisplay/MainDisplay';
+import SearchBox from './components/searchBox/SearchBox';
+import Backdrop from './components/UI/backdrop/Backdrop';
 import { todayWeather } from './interfaces';
 
 const App: React.FC = () => {
@@ -42,11 +44,17 @@ const App: React.FC = () => {
 
 	const toggleSearchModeHandler = () => {
 		setSearchMode((prevSearchMode) => !prevSearchMode);
+		console.log(searchMode);
 	};
 
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax } = todayWeather;
 	return (
 		<div className={styles.app}>
+			{searchMode && (
+				<Backdrop searchModeToggle={toggleSearchModeHandler}>
+					<SearchBox />
+				</Backdrop>
+			)}
 			<MainDisplay
 				searchModeToggle={toggleSearchModeHandler}
 				temp={temp}

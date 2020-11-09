@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SearchBox.module.scss';
 
-const searchBox: React.FC = () => {
+const SearchBox: React.FC = () => {
 	return (
 		<div className={styles.searchBoxContainer}>
 			<img alt='globe' src='/globe.png' height='30px' />
@@ -12,4 +12,4 @@ const searchBox: React.FC = () => {
 	);
 };
 
-export default searchBox;
+export default SearchBox;
