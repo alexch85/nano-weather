@@ -50,8 +50,8 @@ const App: React.FC = () => {
 	return (
 		<div className={styles.app}>
 			{searchMode && (
-				<Backdrop searchModeToggle={toggleSearchModeHandler}>
-					<SearchBox />
+				<Backdrop>
+					<SearchBox searchModeToggle={toggleSearchModeHandler} />
 				</Backdrop>
 			)}
 			<MainDisplay

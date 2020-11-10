@@ -25,6 +25,9 @@ export interface wrapperPropsI {
 
 export interface backdropWrapperPropsI {
 	children: React.ReactNode;
+}
+
+export interface ISearchBoxProps {
 	searchModeToggle: () => void;
 }
 

@@ -1,7 +1,7 @@
 @import 'themes.scss';
 
 .searchBoxContainer {
-	height: 230px;
+	height: 250px;
 	width: 300px;
 	margin: 0 auto;
 	padding: 10px 20px 20px;
@@ -29,6 +29,13 @@
 	border: none;
 	border-bottom: 1px solid #333;
 	outline: none;
+	margin: 10px 0;
+}
+
+.closeIcon {
+	align-self: flex-end;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
 
 .selectBtn {
