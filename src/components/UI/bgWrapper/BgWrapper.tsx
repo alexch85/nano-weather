@@ -4,30 +4,31 @@ import styles from './BgWrapper.module.scss';
 
 const BgWrapper: React.FC<wrapperPropsI> = ({ children }) => {
 	const [background, setBackground] = useState('');
-	const setBackgroundHandler = async () => {
-		const date = new Date();
-		const time = date.getHours();
+	const setBackgroundHandler = () => {
+		const dateNow = new Date();
+		const timeNow = dateNow.getHours();
+		console.log(timeNow);
 
 		let background = '';
 
-		if (time > 6 && time < 12) {
+		if (timeNow >= 6 && timeNow <= 12) {
 			background = 'url(backgrounds/bg-mobile-clear-dawn@2x.jpg)';
 		}
-		if (time > 12 && time < 17) {
+		if (timeNow >= 12 && timeNow <= 17) {
 			background = 'url(backgrounds/bg-mobile-clear-noon@2x.jpg)';
 		}
-		if (time > 17 && time < 20) {
+		if (timeNow >= 17 && timeNow <= 20) {
 			background = 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg)';
 		}
-		if (time > 20 || time < 6) {
+		if (timeNow >= 20 || timeNow <= 6) {
 			background = 'url(backgrounds/bg-mobile-clear-night@2x.jpg)';
 		}
 
 		return background;
 	};
 	useEffect(() => {
-		const backgroundSet = async () => {
-			setBackground(await setBackgroundHandler());
+		const backgroundSet = () => {
+			setBackground(setBackgroundHandler());
 		};
 		backgroundSet();
 	}, []);
