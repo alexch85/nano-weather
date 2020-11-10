@@ -4,7 +4,7 @@ import styles from './BgWrapper.module.scss';
 
 const BgWrapper: React.FC<wrapperPropsI> = ({ children }) => {
 	const [background, setBackground] = useState('');
-	const setBackgroundHandler = () => {
+	const setBackgroundHandler = async () => {
 		const date = new Date();
 		const time = date.getHours();
 
@@ -22,14 +22,21 @@ const BgWrapper: React.FC<wrapperPropsI> = ({ children }) => {
 		if (time > 20 || time < 6) {
 			background = 'url(backgrounds/bg-mobile-clear-night@2x.jpg)';
 		}
+
 		return background;
 	};
 	useEffect(() => {
-		setBackground(setBackgroundHandler());
+		const backgroundSet = async () => {
+			setBackground(await setBackgroundHandler());
+		};
+		backgroundSet();
 	}, []);
 
 	return (
-		<div className={styles.bgWrapper} style={{ backgroundImage: background }}>
+		<div
+			className={styles.bgWrapper}
+			style={background ? { backgroundImage: background } : { background: 'black' }}
+		>
 			{children}
 		</div>
 	);

@@ -9,7 +9,6 @@ import { todayWeather } from './interfaces';
 
 const App: React.FC = () => {
 	const [searchMode, setSearchMode] = useState(false);
-
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({
