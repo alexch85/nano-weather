@@ -11,6 +11,7 @@ const App: React.FC = () => {
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
+	const [city, setCity] = useState<string | null>('london');
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({
 		temp: 0,
 		humidity: 0,
@@ -36,10 +37,10 @@ const App: React.FC = () => {
 	useEffect(() => {
 		console.log(lat, lon);
 		const fetchAPI = async () => {
-			setTodayWeather(await fetchWeather(lat, lon));
+			setTodayWeather(await fetchWeather(lat, lon, city));
 		};
 		fetchAPI();
-	}, [lat, lon]);
+	}, [lat, lon, city]);
 
 	const toggleSearchModeHandler = () => {
 		setSearchMode((prevSearchMode) => !prevSearchMode);
