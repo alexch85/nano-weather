@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const APIkey: string = '8b308b3f70fca17e387bd8aab2c848e4';
 
-export const fetchWeather = async (lat: number, lon: number, city: string | null) => {
+export const fetchWeather = async (lat: number, lon: number, city: string | undefined) => {
 	let url: string;
 	if (lat === 0 && lon === 0) {
 		url = `http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${APIkey}`;

@@ -11,7 +11,8 @@ const App: React.FC = () => {
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
-	const [city, setCity] = useState<string | null>('london');
+	const [cityValue, setCityValue] = useState('');
+	const [city, setCity] = useState<string | undefined>(undefined);
 	const [todayWeather, setTodayWeather] = useState<todayWeather>({
 		temp: 0,
 		humidity: 0,
@@ -44,7 +45,19 @@ const App: React.FC = () => {
 
 	const toggleSearchModeHandler = () => {
 		setSearchMode((prevSearchMode) => !prevSearchMode);
-		console.log(searchMode);
+	};
+
+	const searchByCity = () => {
+		setCity(cityValue);
+		setCityValue('');
+		toggleSearchModeHandler();
+		if (cityValue === '' || undefined) {
+			alert('Enter valid city name');
+		}
+	};
+
+	const setCityHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setCityValue(event.target.value);
 	};
 
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax } = todayWeather;
@@ -52,7 +65,12 @@ const App: React.FC = () => {
 		<div className={styles.app}>
 			{searchMode && (
 				<Backdrop>
-					<SearchBox searchModeToggle={toggleSearchModeHandler} />
+					<SearchBox
+						searchModeToggle={toggleSearchModeHandler}
+						setCityHandler={setCityHandler}
+						cityValue={cityValue}
+						searchByCity={searchByCity}
+					/>
 				</Backdrop>
 			)}
 			<MainDisplay

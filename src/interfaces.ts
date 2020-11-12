@@ -29,6 +29,9 @@ export interface backdropWrapperPropsI {
 
 export interface ISearchBoxProps {
 	searchModeToggle: () => void;
+	searchByCity: () => void;
+	cityValue: string;
+	setCityHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface dailyWeatherPropsI {
