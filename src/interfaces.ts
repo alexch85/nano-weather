@@ -1,4 +1,4 @@
-export interface todayWeather {
+export interface ITodayWeatherProps {
 	temp: number;
 	humidity: number;
 	tempMin: number;
@@ -10,7 +10,7 @@ export interface todayWeather {
 	error: boolean;
 }
 
-export interface mainDisplayI {
+export interface IMainDisplayProps {
 	temp: number;
 	humidity: number;
 	feelsLike: number;
@@ -20,11 +20,11 @@ export interface mainDisplayI {
 	searchModeToggle: () => void;
 }
 
-export interface wrapperPropsI {
+export interface IWrapperProps {
 	children: React.ReactNode;
 }
 
-export interface backdropWrapperPropsI {
+export interface IBackdropWrapperProps {
 	children: React.ReactNode;
 }
 
@@ -35,12 +35,12 @@ export interface ISearchBoxProps {
 	setCityHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export interface dailyWeatherPropsI {
+export interface IDailyWeatherProps {
 	tempMin: number;
 	tempMax: number;
 }
 
-export interface navPropsI {
+export interface INavProps {
 	searchModeToggle: () => void;
 }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './TempMinMax.module.scss';
-import { dailyWeatherPropsI } from '../../interfaces';
+import { IDailyWeatherProps } from '../../interfaces';
 
-const tempMinMax: React.FC<dailyWeatherPropsI> = ({ tempMin, tempMax }) => {
+const tempMinMax: React.FC<IDailyWeatherProps> = ({ tempMin, tempMax }) => {
 	return (
 		<div>
 			<div className={styles.dateContainer}>{new Date().toDateString()}</div>

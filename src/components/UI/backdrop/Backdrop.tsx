@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Backdrop.module.scss';
-import { backdropWrapperPropsI } from '../../../interfaces';
+import { IBackdropWrapperProps } from '../../../interfaces';
 
-const Backdrop: React.FC<backdropWrapperPropsI> = ({ children }) => {
+const Backdrop: React.FC<IBackdropWrapperProps> = ({ children }) => {
 	return <div className={styles.backdrop}>{children}</div>;
 };
 

@@ -4,11 +4,11 @@ import location from '../../assets/icons/location.svg';
 import weatherIcon from '../../assets/icons/sun-cloudy.svg';
 import windFlag from '../../assets/icons/flag.svg';
 import humidityIcon from '../../assets/icons/wet-1.svg';
-import { mainDisplayI } from '../../interfaces';
+import { IMainDisplayProps } from '../../interfaces';
 import BgWrapper from '../UI/bgWrapper/BgWrapper';
 import Navigation from '../navigation/Navigation';
 
-const MainDisplay: React.FC<mainDisplayI> = ({
+const MainDisplay: React.FC<IMainDisplayProps> = ({
 	temp,
 	humidity,
 	feelsLike,

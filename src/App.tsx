@@ -6,7 +6,7 @@ import MainDisplay from './components/mainDisplay/MainDisplay';
 import SearchModal from './components/searchModal/SearchModal';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
-import { todayWeather } from './interfaces';
+import { ITodayWeatherProps } from './interfaces';
 
 const App: React.FC = () => {
 	const [searchMode, setSearchMode] = useState(false);
@@ -14,7 +14,7 @@ const App: React.FC = () => {
 	const [lon, setLon] = useState(0);
 	const [cityValue, setCityValue] = useState('');
 	const [city, setCity] = useState<string | undefined>(undefined);
-	const [todayWeather, setTodayWeather] = useState<todayWeather>({
+	const [todayWeather, setTodayWeather] = useState<ITodayWeatherProps>({
 		temp: 0,
 		humidity: 0,
 		tempMax: 0,

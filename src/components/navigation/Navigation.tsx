@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Navigation.module.scss';
 import options from '../../assets/icons/options.svg';
-import { navPropsI } from '../../interfaces';
+import { INavProps } from '../../interfaces';
 
-const Navigation: React.FC<navPropsI> = ({ searchModeToggle }) => {
+const Navigation: React.FC<INavProps> = ({ searchModeToggle }) => {
 	return (
 		<div className={styles.navContainer}>
 			<img alt='search' src='/icons/search-icon.svg' height='25px' onClick={searchModeToggle} />

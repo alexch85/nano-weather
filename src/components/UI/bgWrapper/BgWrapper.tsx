@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { wrapperPropsI } from '../../../interfaces';
+import { IWrapperProps } from '../../../interfaces';
 import styles from './BgWrapper.module.scss';
 
-const BgWrapper: React.FC<wrapperPropsI> = ({ children }) => {
+const BgWrapper: React.FC<IWrapperProps> = ({ children }) => {
 	const [background, setBackground] = useState('');
 	const setBackgroundHandler = () => {
 		const dateNow = new Date();
