@@ -5,3 +5,31 @@ $colors: (
 	main-gray: #cccccc,
 	temp-gradient: linear-gradient(to right, #7b61e2, #e91ee9),
 );
+
+@mixin modal($height: 100) {
+	height: $height;
+	width: 300px;
+	margin: 0 auto;
+	padding: 10px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+	background: #fff;
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+@mixin button {
+	padding: 10px 10px;
+	background: map-get($colors, main-purple);
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+	:focus,
+	:hover {
+		background: map-get($colors, main-pink);
+	}
+}

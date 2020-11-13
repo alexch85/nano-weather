@@ -1,0 +1,34 @@
+@import 'themes.scss';
+
+.searchBoxContainer {
+	@include modal(270px);
+}
+.searchBoxContainer img {
+	align-self: center;
+	height: 70px;
+}
+
+.searchBoxContainer h3 {
+	margin: 0;
+	color: #333;
+}
+
+.searchBoxContainer input,
+.searchBoxContainer input:focus,
+.searchBoxContainer input:active {
+	border: none;
+	border-bottom: 1px solid #333;
+	outline: none;
+	margin: 10px 0;
+	font-size: 1rem;
+}
+
+.closeIcon {
+	align-self: flex-end;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.selectBtn {
+	@include button;
+}

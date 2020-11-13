@@ -1,29 +1,9 @@
 @import 'themes.scss';
 
 .errorModal {
-	height: 100px;
-	width: 300px;
-	margin: 0 auto;
-	padding: 10px 20px 20px;
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: space-between;
-	background: #fff;
-	border-radius: 5px;
-	z-index: 1000;
+	@include modal;
 }
 
-.selectBtn {
-	padding: 10px 10px;
-	background: map-get($colors, main-purple);
-	color: #fff;
-	border: none;
-	outline: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-.selectBtn:hover,
-.selectBtn:focus {
-	background: map-get($colors, main-pink);
+.closeBtn {
+	@include button;
 }

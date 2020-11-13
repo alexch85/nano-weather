@@ -6,7 +6,7 @@ const ErrorModal: React.FC<IErrorModalProps> = ({ closeErrorHandler }) => {
 	return (
 		<div className={styles.errorModal}>
 			<p>Please Enter a valid city name</p>
-			<button className={styles.selectBtn} onClick={closeErrorHandler}>
+			<button className={styles.closeBtn} onClick={closeErrorHandler}>
 				close
 			</button>
 		</div>

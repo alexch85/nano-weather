@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SearchBox.module.scss';
+import styles from './SearchModal.module.scss';
 import { MdClose } from 'react-icons/md';
 import { ISearchBoxProps } from '../../interfaces';
 
