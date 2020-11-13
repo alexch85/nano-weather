@@ -1,7 +1,7 @@
 @import 'themes.scss';
 
-.searchBoxContainer {
-	height: 250px;
+.errorModal {
+	height: 100px;
 	width: 300px;
 	margin: 0 auto;
 	padding: 10px 20px 20px;
@@ -12,31 +12,6 @@
 	background: #fff;
 	border-radius: 5px;
 	z-index: 1000;
-}
-.searchBoxContainer img {
-	align-self: center;
-	height: 70px;
-}
-
-.searchBoxContainer h3 {
-	margin: 0;
-	color: #333;
-}
-
-.searchBoxContainer input,
-.searchBoxContainer input:focus,
-.searchBoxContainer input:active {
-	border: none;
-	border-bottom: 1px solid #333;
-	outline: none;
-	margin: 10px 0;
-	font-size: 1rem;
-}
-
-.closeIcon {
-	align-self: flex-end;
-	font-size: 1.5rem;
-	cursor: pointer;
 }
 
 .selectBtn {

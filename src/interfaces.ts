@@ -7,6 +7,7 @@ export interface todayWeather {
 	windSpeed: number;
 	mainWeather: string;
 	cityName: string;
+	error: boolean;
 }
 
 export interface mainDisplayI {
@@ -41,4 +42,8 @@ export interface dailyWeatherPropsI {
 
 export interface navPropsI {
 	searchModeToggle: () => void;
+}
+
+export interface IErrorModalProps {
+	closeErrorHandler: () => void;
 }

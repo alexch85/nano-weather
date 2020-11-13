@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { fetchWeather } from './api';
 import styles from './App.module.scss';
 import DailyWeather from './components/dailyWeather/DailyWeather';
 import MainDisplay from './components/mainDisplay/MainDisplay';
 import SearchBox from './components/searchBox/SearchBox';
 import Backdrop from './components/UI/backdrop/Backdrop';
+import ErrorModal from './components/UI/errorModal/ErrorModal';
 import { todayWeather } from './interfaces';
 
 const App: React.FC = () => {
@@ -22,6 +23,7 @@ const App: React.FC = () => {
 		windSpeed: 0,
 		mainWeather: '',
 		cityName: '',
+		error: false,
 	});
 
 	useEffect(() => {
@@ -35,13 +37,14 @@ const App: React.FC = () => {
 			alert('Geolocation is not supported by your browser');
 		}
 	}, []);
+
+	const fetchAPI = useCallback(async (lat: number, lon: number, city: string | undefined) => {
+		setTodayWeather(await fetchWeather(lat, lon, city));
+	}, []);
 	useEffect(() => {
 		console.log(lat, lon);
-		const fetchAPI = async () => {
-			setTodayWeather(await fetchWeather(lat, lon, city));
-		};
-		fetchAPI();
-	}, [lat, lon, city]);
+		fetchAPI(lat, lon, city);
+	}, [fetchAPI, lat, lon, city]);
 
 	const toggleSearchModeHandler = () => {
 		setSearchMode((prevSearchMode) => !prevSearchMode);
@@ -51,6 +54,7 @@ const App: React.FC = () => {
 		setCity(cityValue);
 		setCityValue('');
 		toggleSearchModeHandler();
+		console.log(city);
 		if (cityValue === '' || undefined) {
 			alert('Enter valid city name');
 		}
@@ -60,9 +64,19 @@ const App: React.FC = () => {
 		setCityValue(event.target.value);
 	};
 
-	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax } = todayWeather;
+	const closeErrorHandler = () => {
+		setCity(undefined);
+		fetchAPI(lat, lon, city);
+	};
+
+	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax, error } = todayWeather;
 	return (
 		<div className={styles.app}>
+			{error && (
+				<Backdrop>
+					<ErrorModal closeErrorHandler={closeErrorHandler} />
+				</Backdrop>
+			)}
 			{searchMode && (
 				<Backdrop>
 					<SearchBox
