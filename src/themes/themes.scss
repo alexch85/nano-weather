@@ -14,10 +14,14 @@ $colors: (
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-	justify-content: space-between;
 	background: #fff;
 	border-radius: 5px;
 	z-index: 1000;
+	@media (max-width: 768px) {
+		width: 100%;
+		height: 100%;
+		align-items: center;
+	}
 }
 
 @mixin button {

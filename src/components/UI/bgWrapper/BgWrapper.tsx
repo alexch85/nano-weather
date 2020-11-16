@@ -2,26 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { IWrapperProps } from '../../../interfaces';
 import styles from './BgWrapper.module.scss';
 
-const BgWrapper: React.FC<IWrapperProps> = ({ children }) => {
+const BgWrapper: React.FC<IWrapperProps> = ({ children, screenWidth }) => {
 	const [background, setBackground] = useState('');
+	const breakpoint = 768;
 	const setBackgroundHandler = () => {
 		const dateNow = new Date();
 		const timeNow = dateNow.getHours();
+		// const timeNow = 9;
 		console.log(timeNow);
 
 		let background = '';
 
 		if (timeNow >= 6 && timeNow <= 12) {
-			background = 'url(backgrounds/bg-mobile-clear-dawn@2x.jpg)';
+			breakpoint >= screenWidth
+				? (background = 'url(backgrounds/bg-mobile-clear-dawn@2x.jpg)')
+				: (background = 'url(backgrounds/bg-dawn-clear@2x.jpg)');
 		}
 		if (timeNow >= 12 && timeNow <= 17) {
-			background = 'url(backgrounds/bg-mobile-clear-noon@2x.jpg)';
+			breakpoint >= screenWidth
+				? (background = 'url(backgrounds/bg-mobile-clear-noon@2x.jpg)')
+				: (background = 'url(backgrounds/bg-noon-clear@2x.jpg)');
 		}
 		if (timeNow >= 17 && timeNow <= 20) {
-			background = 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg)';
+			breakpoint >= screenWidth
+				? (background = 'url(backgrounds/bg-mobile-clear-dusk@2x.jpg)')
+				: (background = 'url(backgrounds/bg-dusk-clear@2x.jpg)');
 		}
 		if (timeNow >= 20 || timeNow <= 6) {
-			background = 'url(backgrounds/bg-mobile-clear-night@2x.jpg)';
+			breakpoint >= screenWidth
+				? (background = 'url(backgrounds/bg-mobile-clear-night@2x.jpg)')
+				: (background = 'url(backgrounds/bg-night-clear@2x.jpg)');
 		}
 
 		return background;
@@ -31,7 +41,7 @@ const BgWrapper: React.FC<IWrapperProps> = ({ children }) => {
 			setBackground(setBackgroundHandler());
 		};
 		backgroundSet();
-	}, []);
+	});
 
 	return (
 		<div

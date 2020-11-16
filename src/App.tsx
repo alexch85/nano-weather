@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import { fetchWeather } from './api';
 import styles from './App.module.scss';
 import DailyWeather from './components/dailyWeather/DailyWeather';
@@ -9,6 +9,14 @@ import ErrorModal from './components/UI/errorModal/ErrorModal';
 import { ITodayWeatherProps } from './interfaces';
 
 const App: React.FC = () => {
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+	useLayoutEffect(() => {
+		const windowResizeHandler = () => setScreenWidth(window.innerWidth);
+		window.addEventListener('resize', windowResizeHandler);
+		return () => {
+			window.removeEventListener('resize', windowResizeHandler);
+		};
+	}, []);
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
@@ -95,6 +103,7 @@ const App: React.FC = () => {
 				windSpeed={windSpeed}
 				mainWeather={mainWeather}
 				cityName={cityName}
+				screenWidth={screenWidth}
 			/>
 			<DailyWeather tempMin={tempMin} tempMax={tempMax} />
 		</div>

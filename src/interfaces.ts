@@ -17,11 +17,13 @@ export interface IMainDisplayProps {
 	windSpeed: number;
 	mainWeather: string;
 	cityName: string;
+	screenWidth: number;
 	searchModeToggle: () => void;
 }
 
 export interface IWrapperProps {
 	children: React.ReactNode;
+	screenWidth: number;
 }
 
 export interface IBackdropWrapperProps {
