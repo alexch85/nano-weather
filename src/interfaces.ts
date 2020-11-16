@@ -47,3 +47,7 @@ export interface INavProps {
 export interface IErrorModalProps {
 	closeErrorHandler: () => void;
 }
+
+export interface IWeatherIconProps {
+	mainWeather: string;
+}
