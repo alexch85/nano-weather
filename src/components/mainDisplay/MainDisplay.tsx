@@ -6,7 +6,8 @@ import humidityIcon from '../../assets/icons/wet-1.svg';
 import { IMainDisplayProps } from '../../interfaces';
 import BgWrapper from '../UI/bgWrapper/BgWrapper';
 import Navigation from '../navigation/Navigation';
-import WeatherIcon from '../UI/weatherLayout/WeatherLayout';
+import WeatherIcon from '../UI/weatherIcon/WeatherIcon';
+import { FiPlus } from 'react-icons/fi';
 
 const MainDisplay: React.FC<IMainDisplayProps> = ({
 	temp,
@@ -20,7 +21,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 }) => {
 	return (
 		<BgWrapper screenWidth={screenWidth}>
-			<Navigation searchModeToggle={searchModeToggle} />
+			<Navigation />
 			<div className={styles.locationContainer}>
 				<img alt='location' src={location} height='15px' />
 				{cityName}
@@ -47,6 +48,9 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 					North-west {windSpeed} meters per hour
 				</div>
 			</div>
+			<button className={styles.plusBtn} onClick={searchModeToggle}>
+				<FiPlus />
+			</button>
 		</BgWrapper>
 	);
 };

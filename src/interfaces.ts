@@ -42,9 +42,7 @@ export interface IDailyWeatherProps {
 	tempMax: number;
 }
 
-export interface INavProps {
-	searchModeToggle: () => void;
-}
+export interface INavProps {}
 
 export interface IErrorModalProps {
 	closeErrorHandler: () => void;

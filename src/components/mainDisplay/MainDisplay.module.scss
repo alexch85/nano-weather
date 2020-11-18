@@ -1,12 +1,14 @@
+@import 'themes.scss';
+
 .dateContainer {
 	box-sizing: border-box;
 	margin-bottom: 5px;
+	position: relative;
 }
 .tempContainer {
-	font-size: 4.5rem;
+	font-size: 4rem;
 	box-sizing: border-box;
 	margin: 40px auto 0;
-	padding: 0;
 	overflow: hidden;
 }
 
@@ -16,7 +18,7 @@
 
 .weatherContainer {
 	font-size: 1.8rem;
-	margin: 5px auto;
+	margin: -10px auto 0;
 	display: flex;
 	align-items: center;
 }
@@ -32,4 +34,28 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	font-size: 1rem;
+}
+
+.plusBtn {
+	align-self: flex-end;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	font-size: 2.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	outline: none;
+	margin-left: 10px;
+	background: #fff;
+	color: map-get($colors, main-pink);
+	position: absolute;
+	box-shadow: -1px 1px 5px rgba(150, 150, 150, 0.69);
+	bottom: -35px;
+	right: 20px;
+	:focus,
+	:hover {
+		color: map-get($colors, main-pink);
+	}
 }

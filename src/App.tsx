@@ -17,6 +17,7 @@ const App: React.FC = () => {
 			window.removeEventListener('resize', windowResizeHandler);
 		};
 	}, []);
+
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
