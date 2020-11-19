@@ -3,7 +3,8 @@ $colors: (
 	main-pink: #e41de8,
 	main-dim: #18191a,
 	main-gray: #cccccc,
-	temp-gradient: linear-gradient(to right, #7b61e2, #e91ee9),
+	temp-gradient-horizontal: linear-gradient(to right, #7b61e2, #e91ee9),
+	temp-gradient-vertical: linear-gradient(to top, #7b61e2, #e91ee9),
 );
 
 @mixin modal($height: 100) {

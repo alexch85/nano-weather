@@ -1,0 +1,26 @@
+@import 'themes.scss';
+
+.weatherDay {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40px;
+	margin: 20px 4px;
+	font-weight: bold;
+}
+
+.tempGradient {
+	background: map-get($colors, temp-gradient-vertical);
+	width: 20px;
+	height: 80px;
+	border-radius: 20px;
+	margin: 0 10px;
+}
+
+.tempMax {
+	color: map-get($colors, main-pink);
+}
+
+.tempMin {
+	color: map-get($colors, main-purple);
+}

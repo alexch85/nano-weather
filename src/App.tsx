@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import { fetch7Days, fetchWeather } from './api';
 import styles from './App.module.scss';
-import DailyWeather from './components/dailyWeather/DailyWeather';
+import DailyWeatherDisplay from './components/dailyWeatherDisplay/DailyWeatherDisplay';
 import MainDisplay from './components/mainDisplay/MainDisplay';
 import SearchModal from './components/searchModal/SearchModal';
 import Backdrop from './components/UI/backdrop/Backdrop';
@@ -91,7 +91,7 @@ const App: React.FC = () => {
 				cityName={cityName}
 				screenWidth={screenWidth}
 			/>
-			<DailyWeather tempMin={tempMin} tempMax={tempMax} />
+			<DailyWeatherDisplay tempMin={tempMin} tempMax={tempMax} />
 		</div>
 	);
 };

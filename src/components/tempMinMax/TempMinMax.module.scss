@@ -17,7 +17,7 @@
 	font-size: 1.2rem;
 }
 .tempGradient {
-	background: map-get($colors, temp-gradient);
+	background: map-get($colors, temp-gradient-horizontal);
 	width: 320px;
 	height: 30px;
 	border-radius: 20px;
