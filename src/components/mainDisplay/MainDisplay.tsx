@@ -7,7 +7,7 @@ import { IMainDisplayProps } from '../../interfaces';
 import BgWrapper from '../UI/bgWrapper/BgWrapper';
 import Navigation from '../navigation/Navigation';
 import WeatherIcon from '../UI/weatherIcon/WeatherIcon';
-import { FiPlus } from 'react-icons/fi';
+import { FaSearchLocation } from 'react-icons/fa';
 
 const MainDisplay: React.FC<IMainDisplayProps> = ({
 	temp,
@@ -49,7 +49,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 				</div>
 			</div>
 			<button className={styles.plusBtn} onClick={searchModeToggle}>
-				<FiPlus />
+				<FaSearchLocation />
 			</button>
 		</BgWrapper>
 	);

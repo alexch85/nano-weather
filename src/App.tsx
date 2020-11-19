@@ -17,7 +17,6 @@ const App: React.FC = () => {
 			window.removeEventListener('resize', windowResizeHandler);
 		};
 	}, []);
-
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
@@ -70,6 +69,7 @@ const App: React.FC = () => {
 	};
 
 	const setCityHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+		event.preventDefault();
 		setCityValue(event.target.value);
 	};
 
