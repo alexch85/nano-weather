@@ -48,8 +48,8 @@
 	border: none;
 	outline: none;
 	margin-right: 5px;
-	background: #fff;
-	color: map-get($colors, main-pink);
+	background: map-get($colors, main-pink);
+	color: #fff;
 	position: absolute;
 	box-shadow: -1px 1px 5px rgba(150, 150, 150, 0.69);
 	bottom: -35px;
