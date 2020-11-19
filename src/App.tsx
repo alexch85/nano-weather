@@ -20,7 +20,7 @@ const App: React.FC = () => {
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
-	const [cityValue, setCityValue] = useState('');
+
 	const [city, setCity] = useState<string | undefined>(undefined);
 	const [todayWeather, setTodayWeather] = useState<ITodayWeatherProps>({
 		temp: 0,
@@ -58,19 +58,8 @@ const App: React.FC = () => {
 		setSearchMode((prevSearchMode) => !prevSearchMode);
 	};
 
-	const searchByCity = () => {
-		setCity(cityValue);
-		setCityValue('');
-		toggleSearchModeHandler();
-		console.log(city);
-		if (cityValue === '' || undefined) {
-			alert('Enter valid city name');
-		}
-	};
-
-	const setCityHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-		event.preventDefault();
-		setCityValue(event.target.value);
+	const setCityHandler = (city: string) => {
+		setCity(city);
 	};
 
 	const closeErrorHandler = () => {
@@ -88,12 +77,7 @@ const App: React.FC = () => {
 			)}
 			{searchMode && (
 				<Backdrop>
-					<SearchModal
-						searchModeToggle={toggleSearchModeHandler}
-						setCityHandler={setCityHandler}
-						cityValue={cityValue}
-						searchByCity={searchByCity}
-					/>
+					<SearchModal searchModeToggle={toggleSearchModeHandler} setCityHandler={setCityHandler} />
 				</Backdrop>
 			)}
 			<MainDisplay

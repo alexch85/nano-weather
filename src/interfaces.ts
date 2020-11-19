@@ -30,11 +30,9 @@ export interface IBackdropWrapperProps {
 	children: React.ReactNode;
 }
 
-export interface ISearchBoxProps {
+export interface ISearchModalProps {
 	searchModeToggle: () => void;
-	searchByCity: () => void;
-	cityValue: string;
-	setCityHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	setCityHandler: (city: string) => void;
 }
 
 export interface IDailyWeatherProps {
