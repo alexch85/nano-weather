@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
-import { fetchWeather } from './api';
+import { fetch7Days, fetchWeather } from './api';
 import styles from './App.module.scss';
 import DailyWeather from './components/dailyWeather/DailyWeather';
 import MainDisplay from './components/mainDisplay/MainDisplay';
@@ -52,6 +52,7 @@ const App: React.FC = () => {
 	useEffect(() => {
 		console.log(lat, lon);
 		fetchAPI(lat, lon, city);
+		fetch7Days(lat, lon);
 	}, [fetchAPI, lat, lon, city]);
 
 	const toggleSearchModeHandler = () => {

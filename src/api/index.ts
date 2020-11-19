@@ -51,3 +51,23 @@ export const fetchWeather = async (lat: number, lon: number, city: string | unde
 		};
 	}
 };
+
+export const fetch7Days = async (lat: number, lon: number) => {
+	const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=hourly&appid=${APIkey}`;
+	const {
+		data: { daily },
+	} = await axios.get(url);
+	console.log(daily);
+
+	const sevenDays = daily.map((i: any) => {
+		const [{ main }] = i.weather;
+		return {
+			date: i.dt,
+			weather: main,
+			tempMin: i.temp.min,
+			tempMax: i.temp.max,
+		};
+	});
+	console.log(sevenDays);
+	return sevenDays;
+};
