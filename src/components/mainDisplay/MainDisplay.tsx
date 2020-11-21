@@ -30,7 +30,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 
 			<div className={styles.weatherContainer}>
 				{/* <img alt='weather' src={weatherIcon} height='25px' /> */}
-				<WeatherIcon mainWeather={mainWeather} />
+				<WeatherIcon mainWeather={mainWeather} type='main' />
 			</div>
 			<div>Feels like {Math.round(feelsLike)}°C</div>
 			<div className={styles.sideContainer}>

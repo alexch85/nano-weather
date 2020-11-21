@@ -6,7 +6,7 @@ export const fetchWeather = async (lat: number, lon: number, city: string | unde
 	try {
 		let url: string;
 		if (lat === 0 && lon === 0) {
-			url = `http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${APIkey}`;
+			url = `http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=${APIkey}`;
 		}
 		url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${APIkey}`;
 		if (city) {
@@ -68,6 +68,7 @@ export const fetch7Days = async (lat: number, lon: number) => {
 			tempMax: i.temp.max,
 		};
 	});
+	sevenDays.shift();
 	console.log(sevenDays);
 	return sevenDays;
 };

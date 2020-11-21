@@ -34,6 +34,8 @@ const App: React.FC = () => {
 		error: false,
 	});
 
+	const [weeklyWeather, setWeeklyWeather] = useState<any>([]);
+
 	useEffect(() => {
 		if ('geolocation' in navigator) {
 			console.log('Available');
@@ -49,11 +51,15 @@ const App: React.FC = () => {
 	const fetchAPI = useCallback(async (lat: number, lon: number, city: string | undefined) => {
 		setTodayWeather(await fetchWeather(lat, lon, city));
 	}, []);
+
+	const fetchWeeklyWeather = useCallback(async (lat: number, lon: number) => {
+		setWeeklyWeather(await fetch7Days(lat, lon));
+	}, []);
 	useEffect(() => {
 		console.log(lat, lon);
 		fetchAPI(lat, lon, city);
-		fetch7Days(lat, lon);
-	}, [fetchAPI, lat, lon, city]);
+		fetchWeeklyWeather(lat, lon);
+	}, [fetchAPI, fetchWeeklyWeather, lat, lon, city]);
 
 	const toggleSearchModeHandler = () => {
 		setSearchMode((prevSearchMode) => !prevSearchMode);
@@ -91,7 +97,7 @@ const App: React.FC = () => {
 				cityName={cityName}
 				screenWidth={screenWidth}
 			/>
-			<DailyWeatherDisplay tempMin={tempMin} tempMax={tempMax} />
+			<DailyWeatherDisplay weeklyWeather={weeklyWeather} />
 		</div>
 	);
 };
