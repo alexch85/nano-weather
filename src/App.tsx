@@ -61,7 +61,13 @@ const App: React.FC = () => {
 	}, [fetchAPI, fetchWeeklyWeather, lat, lon, city]);
 
 	const toggleSearchModeHandler = () => {
-		setSearchMode((prevSearchMode) => !prevSearchMode);
+		if (searchMode) {
+			setSearchMode((prevSearchMode) => !prevSearchMode);
+			setCity(undefined);
+			fetchAPI(lat, lon, city);
+		} else {
+			setSearchMode((prevSearchMode) => !prevSearchMode);
+		}
 	};
 
 	const setCityHandler = (city: string) => {
