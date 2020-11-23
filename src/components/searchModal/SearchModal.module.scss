@@ -1,14 +1,13 @@
 @import 'themes.scss';
 
 .searchBoxContainer {
-	@include modal(270px);
+	display: flex;
+	flex-direction: column;
+	width: 300px;
 }
 .searchBoxContainer img {
 	align-self: center;
-	height: 100px;
-	@media (max-width: 768px) {
-		margin-top: 100px;
-	}
+	height: 70px;
 }
 
 .searchBoxContainer h3 {
@@ -36,7 +35,6 @@
 		color: map-get($colors, main-purple);
 	}
 	@media (max-width: 768px) {
-		font-size: 2.5rem;
 		align-self: center;
 	}
 }

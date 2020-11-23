@@ -8,6 +8,7 @@ import BgWrapper from '../UI/bgWrapper/BgWrapper';
 import Navigation from '../navigation/Navigation';
 import WeatherIcon from '../UI/weatherIcon/WeatherIcon';
 import { FaSearchLocation } from 'react-icons/fa';
+import { RiCloseFill } from 'react-icons/ri';
 
 const MainDisplay: React.FC<IMainDisplayProps> = ({
 	temp,
@@ -17,6 +18,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 	mainWeather,
 	cityName,
 	searchModeToggle,
+	searchMode,
 	screenWidth,
 }) => {
 	return (
@@ -48,9 +50,13 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 					North-west {windSpeed} meters per hour
 				</div>
 			</div>
-			<button className={styles.plusBtn} onClick={searchModeToggle}>
-				<FaSearchLocation />
-			</button>
+			<div className={styles.searchBtn} onClick={searchModeToggle}>
+				{!searchMode ? (
+					<FaSearchLocation className={styles.searchIcon} />
+				) : (
+					<RiCloseFill className={styles.searchIcon} />
+				)}
+			</div>
 		</BgWrapper>
 	);
 };

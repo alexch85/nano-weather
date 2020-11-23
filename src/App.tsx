@@ -3,7 +3,6 @@ import { fetch7Days, fetchWeather } from './api';
 import styles from './App.module.scss';
 import DailyWeatherDisplay from './components/dailyWeatherDisplay/DailyWeatherDisplay';
 import MainDisplay from './components/mainDisplay/MainDisplay';
-import SearchModal from './components/searchModal/SearchModal';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
 import { ITodayWeatherProps } from './interfaces';
@@ -82,13 +81,9 @@ const App: React.FC = () => {
 					<ErrorModal closeErrorHandler={closeErrorHandler} />
 				</Backdrop>
 			)}
-			{searchMode && (
-				<Backdrop>
-					<SearchModal searchModeToggle={toggleSearchModeHandler} setCityHandler={setCityHandler} />
-				</Backdrop>
-			)}
 			<MainDisplay
 				searchModeToggle={toggleSearchModeHandler}
+				searchMode={searchMode}
 				temp={temp}
 				humidity={humidity}
 				feelsLike={feelsLike}
@@ -97,7 +92,11 @@ const App: React.FC = () => {
 				cityName={cityName}
 				screenWidth={screenWidth}
 			/>
-			<DailyWeatherDisplay weeklyWeather={weeklyWeather} />
+			<DailyWeatherDisplay
+				weeklyWeather={weeklyWeather}
+				searchMode={searchMode}
+				setCityHandler={setCityHandler}
+			/>
 		</div>
 	);
 };

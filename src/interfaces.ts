@@ -19,6 +19,7 @@ export interface IMainDisplayProps {
 	cityName: string;
 	screenWidth: number;
 	searchModeToggle: () => void;
+	searchMode: boolean;
 }
 
 export interface IWrapperProps {
@@ -31,12 +32,13 @@ export interface IBackdropWrapperProps {
 }
 
 export interface ISearchModalProps {
-	searchModeToggle: () => void;
 	setCityHandler: (city: string) => void;
 }
 
 export interface IDailyWeatherDisplayProps {
 	weeklyWeather: any[];
+	setCityHandler: (city: string) => void;
+	searchMode: boolean;
 }
 
 export interface INavProps {}
