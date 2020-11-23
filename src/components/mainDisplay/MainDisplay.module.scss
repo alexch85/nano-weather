@@ -60,6 +60,14 @@
 		background: map-get($colors, main-purple);
 		cursor: pointer;
 	}
+	@media (max-width: 768px) {
+		&:focus,
+		&:hover,
+		&:active {
+			background: map-get($colors, main-pink);
+			cursor: none;
+		}
+	}
 }
 
 .searchIcon {
