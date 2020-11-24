@@ -60,8 +60,10 @@ export interface IWeatherIconProps {
 
 export interface IWeeklyWeatherProps {
 	[x: string]: any;
-	date: number;
-	weather: string;
-	tempMin: number;
-	tempMax: number;
+	[i: number]: {
+		date: number;
+		weather: string;
+		tempMin: number;
+		tempMax: number;
+	};
 }
