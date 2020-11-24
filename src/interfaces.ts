@@ -35,8 +35,14 @@ export interface ISearchModalProps {
 	setCityHandler: (city: string) => void;
 }
 
+export interface IDailyWeatherProps {
+	date: number;
+	weather: string;
+	tempMin: number;
+	tempMax: number;
+}
 export interface IDailyWeatherDisplayProps {
-	weeklyWeather: any[];
+	weeklyWeather: IWeeklyWeatherProps;
 	setCityHandler: (city: string) => void;
 	searchMode: boolean;
 }
@@ -52,7 +58,8 @@ export interface IWeatherIconProps {
 	type: string;
 }
 
-export interface IDailyWeatherProps {
+export interface IWeeklyWeatherProps {
+	[x: string]: any;
 	date: number;
 	weather: string;
 	tempMin: number;

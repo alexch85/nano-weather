@@ -5,7 +5,7 @@ import DailyWeatherDisplay from './components/dailyWeatherDisplay/DailyWeatherDi
 import MainDisplay from './components/mainDisplay/MainDisplay';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
-import { ITodayWeatherProps } from './interfaces';
+import { IDailyWeatherProps, ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
 
 const App: React.FC = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -33,7 +33,7 @@ const App: React.FC = () => {
 		error: false,
 	});
 
-	const [weeklyWeather, setWeeklyWeather] = useState<any>([]);
+	const [weeklyWeather, setWeeklyWeather] = useState<IWeeklyWeatherProps>([]);
 
 	useEffect(() => {
 		if ('geolocation' in navigator) {
