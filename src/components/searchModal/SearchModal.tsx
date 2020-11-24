@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './SearchModal.module.scss';
-import { MdClose } from 'react-icons/md';
 import { ISearchModalProps } from '../../interfaces';
 
 const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
@@ -23,7 +22,7 @@ const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
 	return (
 		<div className={styles.searchBoxContainer}>
 			<img alt='globe' src='/globe.png' height='30px' />
-			<h3>Select Location</h3>
+			<h3>Select location</h3>
 			<input
 				type='text'
 				placeholder='Enter City Name...'

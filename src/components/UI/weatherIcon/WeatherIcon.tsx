@@ -40,7 +40,7 @@ const weatherIcon: React.FC<IWeatherIconProps> = ({ mainWeather, type }) => {
 				weatherIcon = '/icons/sun-c.svg';
 				break;
 			case 'Few clouds':
-				weatherIcon = '/icons/sun-cloudy-c.svg';
+				weatherIcon = '/icons/sun-clouds-c.svg';
 				break;
 			case 'Clouds':
 				weatherIcon = '/icons/sun-very-cloudy-c.svg';

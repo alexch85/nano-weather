@@ -4,7 +4,7 @@ import styles from './BgWrapper.module.scss';
 
 const BgWrapper: React.FC<IWrapperProps> = ({ children, screenWidth }) => {
 	const [background, setBackground] = useState('');
-	const breakpoint = 768;
+	const breakpoint = 650;
 	const setBackgroundHandler = () => {
 		const dateNow = new Date();
 		const timeNow = dateNow.getHours();

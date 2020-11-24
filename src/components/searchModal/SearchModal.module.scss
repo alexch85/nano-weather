@@ -17,15 +17,17 @@
 	color: #333;
 }
 
-.searchBoxContainer input,
-.searchBoxContainer input:focus,
-.searchBoxContainer input:active {
+.searchBoxContainer input {
 	border: none;
-	border-bottom: 1px solid #333;
+	border-bottom: 1.5px solid #333;
 	outline: none;
 	margin: 10px;
 	font-size: 1rem;
 	margin: 25px 0;
+	&:focus,
+	&:active {
+		border-bottom: 1.5px solid map-get($colors, main-pink);
+	}
 }
 
 .closeIcon {

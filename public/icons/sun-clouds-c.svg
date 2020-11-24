@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="38.478" viewBox="0 0 52 38.478">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_1555" data-name="Path 1555" d="M6.9,19.836A12.936,12.936,0,1,0,19.836,6.9,12.936,12.936,0,0,0,6.9,19.836" transform="translate(-6.9 -6.9)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.749" cy="0.503" r="0.5" gradientTransform="matrix(0.999, 0, 0, -1, 0, 2.461)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#febf2d"/>
+      <stop offset="1" stop-color="#fed947"/>
+    </radialGradient>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_2143" data-name="Rectangle 2143" width="37.773" height="37.738" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="sun-clouds-c" transform="translate(-116 -44.022)">
+    <g id="sun-c" transform="translate(134.886 62.891)">
+      <g id="sun-c-2" data-name="sun-c" transform="translate(-18.886 -18.869)">
+        <g id="Group_1390" data-name="Group 1390" transform="translate(5.95 5.95)" clip-path="url(#clip-path)">
+          <rect id="Rectangle_2142" data-name="Rectangle 2142" width="25.872" height="25.837" transform="translate(0 0)" fill="url(#radial-gradient)"/>
+        </g>
+        <g id="Group_1391" data-name="Group 1391" clip-path="url(#clip-path-2)">
+          <path id="Path_1556" data-name="Path 1556" d="M22.7,32.512v5.261H20.8V32.512h1.9M22.7,0V5.261H20.8V0Z" transform="translate(-2.862)" fill="#fed947"/>
+          <path id="Path_1557" data-name="Path 1557" d="M5.261,22.7H0V20.8H5.261v1.9m32.512,0H32.512V20.8h5.261Z" transform="translate(0 -2.862)" fill="#fed947"/>
+          <path id="Path_1558" data-name="Path 1558" d="M9.308,10.688,5.6,6.98,6.98,5.6l3.708,3.708-1.38,1.38M32.334,33.628l-3.708-3.708,1.294-1.294,3.708,3.708Z" transform="translate(-0.771 -0.771)" fill="#fed947"/>
+          <path id="Path_1559" data-name="Path 1559" d="M10.688,29.919,6.98,33.628,5.6,32.334l3.708-3.708L10.6,29.919M33.628,6.98l-3.708,3.708-1.294-1.38L32.334,5.6Z" transform="translate(-0.771 -0.771)" fill="#fed947"/>
+          <path id="Path_1560" data-name="Path 1560" d="M19.836,6.886H20.7a12.936,12.936,0,0,0,0,25.785h-.862a12.936,12.936,0,1,1,0-25.872" transform="translate(-0.95 -0.936)" fill="#ffe63d"/>
+        </g>
+      </g>
+    </g>
+    <path id="cloud" d="M25.8,19.2c.4-4.6,5.3-8.6,11.1-8.6A12.4,12.4,0,0,1,49,20.1a9.5,9.5,0,0,1,7,9c0,5.3-4.7,9.4-10.3,9.4H13.3a5.7,5.7,0,0,1-2-11,8.8,8.8,0,0,1,14.6-8.3" transform="translate(112 44)" fill="#ccc"/>
+    <path id="cloud-2" data-name="cloud" d="M24.713,18.8c.376-4.386,4.982-8.2,10.434-8.2A11.689,11.689,0,0,1,46.52,19.657a9.035,9.035,0,0,1,6.58,8.581c0,5.053-4.418,8.962-9.682,8.962H12.964a5.381,5.381,0,0,1-5.182-4.461,5.448,5.448,0,0,1,3.3-6.026,8.435,8.435,0,0,1,4-9.069A8.182,8.182,0,0,1,24.807,18.8" transform="translate(113 44.3)" fill="#fff"/>
+  </g>
+</svg>

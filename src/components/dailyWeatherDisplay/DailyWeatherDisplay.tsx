@@ -6,8 +6,8 @@ import DailyWeather from './dailyWeather/DailyWeather';
 
 const DailyWeatherDisplay: React.FC<IDailyWeatherDisplayProps> = ({ weeklyWeather, searchMode, setCityHandler }) => {
 	console.log(weeklyWeather);
-	const weeklyWeatherForcast = weeklyWeather.map((day: IDailyWeatherProps) => (
-		<DailyWeather date={day.date} tempMax={day.tempMax} tempMin={day.tempMin} weather={day.weather} />
+	const weeklyWeatherForcast = weeklyWeather.map((day: IDailyWeatherProps, i) => (
+		<DailyWeather key={i++} date={day.date} tempMax={day.tempMax} tempMin={day.tempMin} weather={day.weather} />
 	));
 	return (
 		<div className={styles.dailyWeatheContainer}>
