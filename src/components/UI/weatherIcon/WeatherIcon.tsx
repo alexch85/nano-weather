@@ -66,10 +66,10 @@ const weatherIcon: React.FC<IWeatherIconProps> = ({ mainWeather, type }) => {
 	}
 
 	return (
-		<>
-			<img alt='weather' src={weatherIcon} height='25px' style={{ marginRight: '5px' }} />
+		<div style={{ display: 'flex', alignItems: 'center' }}>
+			<img alt='weather' src={weatherIcon} height='30px' style={{ marginRight: '7px' }} />
 			{type === 'main' && mainWeather}
-		</>
+		</div>
 	);
 };
 

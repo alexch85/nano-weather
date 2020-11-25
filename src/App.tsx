@@ -98,6 +98,7 @@ const App: React.FC = () => {
 				mainWeather={mainWeather}
 				cityName={cityName}
 				screenWidth={screenWidth}
+				city={city}
 			/>
 			<DailyWeatherDisplay
 				weeklyWeather={weeklyWeather}

@@ -20,9 +20,10 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 	searchModeToggle,
 	searchMode,
 	screenWidth,
+	city,
 }) => {
 	return (
-		<BgWrapper screenWidth={screenWidth}>
+		<BgWrapper screenWidth={screenWidth} city={city}>
 			<Navigation />
 			<div className={styles.locationContainer}>
 				<img alt='location' src={location} height='15px' />

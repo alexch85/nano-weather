@@ -20,11 +20,13 @@ export interface IMainDisplayProps {
 	screenWidth: number;
 	searchModeToggle: () => void;
 	searchMode: boolean;
+	city: string | undefined;
 }
 
 export interface IWrapperProps {
 	children: React.ReactNode;
 	screenWidth: number;
+	city: string | undefined;
 }
 
 export interface IBackdropWrapperProps {
