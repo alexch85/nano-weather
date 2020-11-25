@@ -8,7 +8,7 @@ const BgWrapper: React.FC<IWrapperProps> = ({ children, screenWidth }) => {
 	const setBackgroundHandler = () => {
 		const dateNow = new Date();
 		const timeNow = dateNow.getHours();
-		// const timeNow = 9;
+		// const timeNow = 10;
 		console.log(timeNow);
 
 		let background = '';

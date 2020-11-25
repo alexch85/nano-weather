@@ -5,10 +5,11 @@ import DailyWeatherDisplay from './components/dailyWeatherDisplay/DailyWeatherDi
 import MainDisplay from './components/mainDisplay/MainDisplay';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
-import { IDailyWeatherProps, ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
+import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
 
 const App: React.FC = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+	//Getting the screen width on window resize
 	useLayoutEffect(() => {
 		const windowResizeHandler = () => setScreenWidth(window.innerWidth);
 		window.addEventListener('resize', windowResizeHandler);
@@ -79,7 +80,7 @@ const App: React.FC = () => {
 		fetchAPI(lat, lon, city);
 	};
 
-	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, tempMin, tempMax, error } = todayWeather;
+	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, error } = todayWeather;
 	return (
 		<div className={styles.app}>
 			{error && (

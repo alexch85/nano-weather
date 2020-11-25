@@ -45,6 +45,10 @@
 
 .selectBtn {
 	@include button;
+	&:disabled {
+		cursor: not-allowed;
+		background: #ccc;
+	}
 }
 
 @-webkit-keyframes scale-up-center {
