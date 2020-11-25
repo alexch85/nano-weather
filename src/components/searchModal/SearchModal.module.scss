@@ -21,9 +21,9 @@
 	border: none;
 	border-bottom: 1.5px solid #333;
 	outline: none;
-	margin: 10px;
-	font-size: 1rem;
-	margin: 25px 0;
+	font-size: 1.1rem;
+	margin: 25px auto 20px;
+	width: 90%;
 	&:focus,
 	&:active {
 		border-bottom: 1.5px solid map-get($colors, main-pink);
@@ -45,6 +45,8 @@
 
 .selectBtn {
 	@include button;
+	width: 95%;
+	margin: 0 auto;
 	&:disabled {
 		cursor: not-allowed;
 		background: #ccc;

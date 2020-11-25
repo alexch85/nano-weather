@@ -15,15 +15,23 @@ const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
 		setCityValue('');
 	};
 
+	const searchByCityEnter = (event: React.KeyboardEvent) => {
+		if (event.key === 'Enter') {
+			setCityHandler(cityValue);
+			setCityValue('');
+		}
+	};
+
 	return (
 		<div className={styles.searchBoxContainer}>
 			<img alt='globe' src='/globe.png' height='30px' />
-			<h3>Enter location</h3>
+			{/* <h3>Enter location</h3> */}
 			<input
 				type='text'
 				placeholder='Enter City Name...'
 				value={cityValue}
 				onChange={(e) => setCityValueHandler(e)}
+				onKeyPress={searchByCityEnter}
 			/>
 			<button className={styles.selectBtn} onClick={searchByCity} disabled={cityValue === ''}>
 				Select
