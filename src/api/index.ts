@@ -37,7 +37,7 @@ export const fetchWeather = async (lat: number, lon: number, city: string | unde
 			error: false,
 		};
 	} catch (error) {
-		alert(`error ${error} - something went wrong`);
+		console.log(`error ${error} - something went wrong`);
 
 		return {
 			temp: 0,
@@ -74,6 +74,6 @@ export const fetch7Days = async (lat: number, lon: number) => {
 		console.log(sevenDays);
 		return sevenDays;
 	} catch (error) {
-		alert(`error ${error} - something went wrong`);
+		console.log(`error ${error} - something went wrong`);
 	}
 };

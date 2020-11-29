@@ -21,6 +21,7 @@ export interface IMainDisplayProps {
 	searchModeToggle: () => void;
 	searchMode: boolean;
 	city: string | undefined;
+	loading: boolean;
 }
 
 export interface IWrapperProps {

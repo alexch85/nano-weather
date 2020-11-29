@@ -10,6 +10,7 @@ import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
 const App: React.FC = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 	const [searchMode, setSearchMode] = useState(false);
+	const [loading, setLoading] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [city, setCity] = useState<string | undefined>(undefined);
@@ -49,11 +50,15 @@ const App: React.FC = () => {
 
 	//Fetch methods from API
 	const fetchAPI = useCallback(async (lat: number, lon: number, city: string | undefined) => {
+		setLoading(true);
 		setTodayWeather(await fetchWeather(lat, lon, city));
+		setLoading(false);
 	}, []);
 
 	const fetchWeeklyWeather = useCallback(async (lat: number, lon: number) => {
+		setLoading(true);
 		setWeeklyWeather(await fetch7Days(lat, lon));
+		setLoading(false);
 	}, []);
 
 	useEffect(() => {
@@ -100,6 +105,7 @@ const App: React.FC = () => {
 				cityName={cityName}
 				screenWidth={screenWidth}
 				city={city}
+				loading={loading}
 			/>
 			<DailyWeatherDisplay
 				weeklyWeather={weeklyWeather}

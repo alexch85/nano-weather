@@ -9,6 +9,7 @@ import Navigation from '../navigation/Navigation';
 import WeatherIcon from '../UI/weatherIcon/WeatherIcon';
 import { FaSearchLocation } from 'react-icons/fa';
 import { RiCloseFill } from 'react-icons/ri';
+import Loader from '../UI/loader/Loader';
 
 const MainDisplay: React.FC<IMainDisplayProps> = ({
 	temp,
@@ -21,6 +22,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 	searchMode,
 	screenWidth,
 	city,
+	loading,
 }) => {
 	return (
 		<BgWrapper screenWidth={screenWidth} city={city}>
@@ -29,13 +31,19 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 				<img alt='location' src={location} height='15px' />
 				{cityName}
 			</div>
-			<div className={styles.tempContainer}>{Math.round(temp)}°c</div>
+			{loading ? (
+				<Loader />
+			) : (
+				<>
+					<div className={styles.tempContainer}>{Math.round(temp)}°c</div>
+					<div className={styles.weatherContainer}>
+						{/* <img alt='weather' src={weatherIcon} height='25px' /> */}
+						<WeatherIcon mainWeather={mainWeather} type='main' />
+					</div>
+					<div>Feels like {Math.round(feelsLike)}°C</div>
+				</>
+			)}
 
-			<div className={styles.weatherContainer}>
-				{/* <img alt='weather' src={weatherIcon} height='25px' /> */}
-				<WeatherIcon mainWeather={mainWeather} type='main' />
-			</div>
-			<div>Feels like {Math.round(feelsLike)}°C</div>
 			<div className={styles.sideContainer}>
 				<div className={styles.humidContainer}>
 					<img
