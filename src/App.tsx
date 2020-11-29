@@ -7,13 +7,14 @@ import OptionsMenu from './components/optionsMenu/OptionsMenu';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
 import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
+import cx from 'classnames';
 
 const App: React.FC = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 	const [searchMode, setSearchMode] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [optionsModal, setOptionsModal] = useState(false);
-
+	const [darkMode, setDarkMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [city, setCity] = useState<string | undefined>(undefined);
@@ -84,6 +85,10 @@ const App: React.FC = () => {
 		setOptionsModal((optionsModal) => !optionsModal);
 	};
 
+	const setDarkModeHandler = () => {
+		setDarkMode((darkMode) => !darkMode);
+	};
+
 	const setCityHandler = (city: string) => {
 		setCity(city);
 	};
@@ -95,7 +100,7 @@ const App: React.FC = () => {
 
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, error } = todayWeather;
 	return (
-		<div className={styles.app}>
+		<div className={darkMode ? cx(styles.app, styles.dark) : styles.app}>
 			{error && (
 				<Backdrop>
 					<ErrorModal closeErrorHandler={closeErrorHandler} />
@@ -103,7 +108,11 @@ const App: React.FC = () => {
 			)}
 			{optionsModal && (
 				<Backdrop>
-					<OptionsMenu optionsMenuHandler={optionsModalHandler} />
+					<OptionsMenu
+						optionsMenuHandler={optionsModalHandler}
+						setDarkModeHandler={setDarkModeHandler}
+						darkMode={darkMode}
+					/>
 				</Backdrop>
 			)}
 
@@ -125,6 +134,7 @@ const App: React.FC = () => {
 				weeklyWeather={weeklyWeather}
 				searchMode={searchMode}
 				setCityHandler={setCityHandler}
+				darkMode={darkMode}
 			/>
 		</div>
 	);

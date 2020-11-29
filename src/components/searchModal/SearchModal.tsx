@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './SearchModal.module.scss';
 import { ISearchModalProps } from '../../interfaces';
 
-const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
+const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler, darkMode }) => {
 	const [cityValue, setCityValue] = useState('');
 
 	const setCityValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +23,7 @@ const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
 	};
 
 	return (
-		<div className={styles.searchBoxContainer}>
+		<div className={darkMode ? styles.searchBoxContainerdark : styles.searchBoxContainer}>
 			<img alt='globe' src='/globe.png' height='30px' />
 			{/* <h3>Enter location</h3> */}
 			<input

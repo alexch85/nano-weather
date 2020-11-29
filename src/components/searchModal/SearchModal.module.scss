@@ -11,22 +11,39 @@
 	align-self: center;
 	height: 70px;
 }
-
-.searchBoxContainer h3 {
-	margin: 0;
-	color: #333;
+.searchBoxContainerdark img {
+	align-self: center;
+	height: 70px;
 }
 
 .searchBoxContainer input {
 	border: none;
 	border-bottom: 1.5px solid #333;
 	outline: none;
+	background: none;
 	font-size: 1.1rem;
 	margin: 25px auto 20px;
 	width: 90%;
 	&:focus,
 	&:active {
 		border-bottom: 1.5px solid map-get($colors, main-pink);
+	}
+}
+.searchBoxContainerdark input {
+	border: none;
+	border-bottom: 1.5px solid #fff;
+	outline: none;
+	color: white;
+	background: none;
+	font-size: 1.1rem;
+	margin: 25px auto 20px;
+	width: 90%;
+	&:focus,
+	&:active {
+		border-bottom: 1.5px solid map-get($colors, main-pink);
+	}
+	&::placeholder {
+		color: #ccc;
 	}
 }
 
@@ -51,6 +68,10 @@
 		cursor: not-allowed;
 		background: #ccc;
 	}
+}
+
+.dark {
+	color: #fff;
 }
 
 @-webkit-keyframes scale-up-center {
