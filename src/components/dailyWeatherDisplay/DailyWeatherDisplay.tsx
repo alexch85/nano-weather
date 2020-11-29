@@ -5,7 +5,6 @@ import SearchModal from '../searchModal/SearchModal';
 import DailyWeather from './dailyWeather/DailyWeather';
 
 const DailyWeatherDisplay: React.FC<IDailyWeatherDisplayProps> = ({ weeklyWeather, searchMode, setCityHandler }) => {
-	console.log(weeklyWeather);
 	const weeklyWeatherForcast = weeklyWeather.map((day: IDailyWeatherProps, i: number) => (
 		<DailyWeather key={i++} date={day.date} tempMax={day.tempMax} tempMin={day.tempMin} weather={day.weather} />
 	));

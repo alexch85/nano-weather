@@ -55,6 +55,7 @@ const App: React.FC = () => {
 	const fetchWeeklyWeather = useCallback(async (lat: number, lon: number) => {
 		setWeeklyWeather(await fetch7Days(lat, lon));
 	}, []);
+
 	useEffect(() => {
 		console.log(lat, lon);
 		fetchAPI(lat, lon, city);
@@ -65,7 +66,7 @@ const App: React.FC = () => {
 		if (searchMode) {
 			setSearchMode((prevSearchMode) => !prevSearchMode);
 			setCity(undefined);
-			fetchAPI(lat, lon, city);
+			// fetchAPI(lat, lon, city);
 		} else {
 			setSearchMode((prevSearchMode) => !prevSearchMode);
 		}

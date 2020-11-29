@@ -3,7 +3,7 @@ import { IWeatherIconProps } from '../../../interfaces';
 
 const weatherIcon: React.FC<IWeatherIconProps> = ({ mainWeather, type }) => {
 	let weatherIcon = '/icons/sun.svg';
-	console.log(mainWeather);
+	// console.log(mainWeather);
 	if (type === 'main') {
 		switch (mainWeather) {
 			case 'Clear':

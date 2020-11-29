@@ -21,8 +21,9 @@ export const fetchWeather = async (lat: number, lon: number, city: string | unde
 			},
 		} = await axios.get(url);
 		console.log(temp, humidity, weather);
-		const [destructuredWeather] = weather;
-		const { main } = destructuredWeather;
+		// const [destructuredWeather] = weather;
+		const [{ main }] = weather;
+		console.log(weather);
 
 		return {
 			temp,
@@ -36,7 +37,7 @@ export const fetchWeather = async (lat: number, lon: number, city: string | unde
 			error: false,
 		};
 	} catch (error) {
-		console.log(error);
+		alert(`error ${error} - something went wrong`);
 
 		return {
 			temp: 0,
@@ -53,22 +54,26 @@ export const fetchWeather = async (lat: number, lon: number, city: string | unde
 };
 
 export const fetch7Days = async (lat: number, lon: number) => {
-	const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=hourly&appid=${APIkey}`;
-	const {
-		data: { daily },
-	} = await axios.get(url);
-	console.log(daily);
+	try {
+		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=hourly&appid=${APIkey}`;
+		const {
+			data: { daily },
+		} = await axios.get(url);
+		// console.log(daily);
 
-	const sevenDays = daily.map((i: any) => {
-		const [{ main }] = i.weather;
-		return {
-			date: i.dt,
-			weather: main,
-			tempMin: i.temp.min,
-			tempMax: i.temp.max,
-		};
-	});
-	sevenDays.shift();
-	console.log(sevenDays);
-	return sevenDays;
+		const sevenDays = daily.map((i: any) => {
+			const [{ main }] = i.weather;
+			return {
+				date: i.dt,
+				weather: main,
+				tempMin: i.temp.min,
+				tempMax: i.temp.max,
+			};
+		});
+		sevenDays.shift();
+		console.log(sevenDays);
+		return sevenDays;
+	} catch (error) {
+		alert(`error ${error} - something went wrong`);
+	}
 };
