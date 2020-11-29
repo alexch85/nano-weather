@@ -9,18 +9,9 @@ import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
 
 const App: React.FC = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-	//Getting the screen width on window resize
-	useLayoutEffect(() => {
-		const windowResizeHandler = () => setScreenWidth(window.innerWidth);
-		window.addEventListener('resize', windowResizeHandler);
-		return () => {
-			window.removeEventListener('resize', windowResizeHandler);
-		};
-	}, []);
 	const [searchMode, setSearchMode] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
-
 	const [city, setCity] = useState<string | undefined>(undefined);
 	const [todayWeather, setTodayWeather] = useState<ITodayWeatherProps>({
 		temp: 0,
@@ -33,6 +24,14 @@ const App: React.FC = () => {
 		cityName: '',
 		error: false,
 	});
+	//Getting the screen width on window resize
+	useLayoutEffect(() => {
+		const windowResizeHandler = () => setScreenWidth(window.innerWidth);
+		window.addEventListener('resize', windowResizeHandler);
+		return () => {
+			window.removeEventListener('resize', windowResizeHandler);
+		};
+	}, []);
 
 	const [weeklyWeather, setWeeklyWeather] = useState<IWeeklyWeatherProps>([]);
 
@@ -48,6 +47,7 @@ const App: React.FC = () => {
 		}
 	}, []);
 
+	//Fetch methods from API
 	const fetchAPI = useCallback(async (lat: number, lon: number, city: string | undefined) => {
 		setTodayWeather(await fetchWeather(lat, lon, city));
 	}, []);
