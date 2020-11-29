@@ -22,6 +22,11 @@ export interface IMainDisplayProps {
 	searchMode: boolean;
 	city: string | undefined;
 	loading: boolean;
+	optionsMenuHandler: () => void;
+}
+
+export interface IOptionsMenu {
+	optionsMenuHandler: () => void;
 }
 
 export interface IWrapperProps {
@@ -50,7 +55,9 @@ export interface IDailyWeatherDisplayProps {
 	searchMode: boolean;
 }
 
-export interface INavProps {}
+export interface INavProps {
+	optionsMenuHandler: () => void;
+}
 
 export interface IErrorModalProps {
 	closeErrorHandler: () => void;

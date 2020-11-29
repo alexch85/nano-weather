@@ -3,6 +3,7 @@ import { fetch7Days, fetchWeather } from './api';
 import styles from './App.module.scss';
 import DailyWeatherDisplay from './components/dailyWeatherDisplay/DailyWeatherDisplay';
 import MainDisplay from './components/mainDisplay/MainDisplay';
+import OptionsMenu from './components/optionsMenu/OptionsMenu';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
 import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
@@ -11,6 +12,8 @@ const App: React.FC = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 	const [searchMode, setSearchMode] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [optionsModal, setOptionsModal] = useState(false);
+
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [city, setCity] = useState<string | undefined>(undefined);
@@ -77,6 +80,10 @@ const App: React.FC = () => {
 		}
 	};
 
+	const optionsModalHandler = () => {
+		setOptionsModal((optionsModal) => !optionsModal);
+	};
+
 	const setCityHandler = (city: string) => {
 		setCity(city);
 	};
@@ -94,6 +101,12 @@ const App: React.FC = () => {
 					<ErrorModal closeErrorHandler={closeErrorHandler} />
 				</Backdrop>
 			)}
+			{optionsModal && (
+				<Backdrop>
+					<OptionsMenu optionsMenuHandler={optionsModalHandler} />
+				</Backdrop>
+			)}
+
 			<MainDisplay
 				searchModeToggle={toggleSearchModeHandler}
 				searchMode={searchMode}
@@ -106,6 +119,7 @@ const App: React.FC = () => {
 				screenWidth={screenWidth}
 				city={city}
 				loading={loading}
+				optionsMenuHandler={optionsModalHandler}
 			/>
 			<DailyWeatherDisplay
 				weeklyWeather={weeklyWeather}
