@@ -10,9 +10,17 @@ const DailyWeatherDisplay: React.FC<IDailyWeatherDisplayProps> = ({
 	searchMode,
 	setCityHandler,
 	darkMode,
+	fahrenheit,
 }) => {
 	const weeklyWeatherForcast = weeklyWeather.map((day: IDailyWeatherProps, i: number) => (
-		<DailyWeather key={i++} date={day.date} tempMax={day.tempMax} tempMin={day.tempMin} weather={day.weather} />
+		<DailyWeather
+			key={i++}
+			date={day.date}
+			tempMax={day.tempMax}
+			tempMin={day.tempMin}
+			weather={day.weather}
+			fahrenheit={fahrenheit}
+		/>
 	));
 	return (
 		<div className={darkMode ? cx(styles.dailyWeatheContainer, styles.dark) : styles.dailyWeatheContainer}>

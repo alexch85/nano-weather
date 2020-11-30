@@ -19,7 +19,7 @@
 
 .optionContainer {
 	display: flex;
-	margin: 10px auto;
+	margin: 0px auto;
 	width: 140px;
 	align-items: center;
 	justify-content: space-between;
@@ -77,5 +77,6 @@
 
 .saveBtn {
 	@include button;
+	margin-top: 20px;
 	width: 100%;
 }

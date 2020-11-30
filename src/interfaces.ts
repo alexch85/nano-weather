@@ -23,11 +23,14 @@ export interface IMainDisplayProps {
 	city: string | undefined;
 	loading: boolean;
 	optionsMenuHandler: () => void;
+	fahrenheit: boolean;
 }
 
 export interface IOptionsMenu {
 	optionsMenuHandler: () => void;
 	setDarkModeHandler: () => void;
+	setFahrenheitHandler: () => void;
+	fahrenheit: boolean;
 	darkMode: boolean;
 }
 
@@ -51,12 +54,14 @@ export interface IDailyWeatherProps {
 	weather: string;
 	tempMin: number;
 	tempMax: number;
+	fahrenheit: boolean;
 }
 export interface IDailyWeatherDisplayProps {
 	weeklyWeather: IWeeklyWeatherProps;
 	setCityHandler: (city: string) => void;
 	searchMode: boolean;
 	darkMode: boolean;
+	fahrenheit: boolean;
 }
 
 export interface INavProps {

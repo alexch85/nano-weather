@@ -3,7 +3,7 @@ import { IDailyWeatherProps } from '../../../interfaces';
 import WeatherIcon from '../../UI/weatherIcon/WeatherIcon';
 import styles from './DailyWeather.module.scss';
 
-const WeatherDay: React.FC<IDailyWeatherProps> = ({ date, weather, tempMin, tempMax }) => {
+const WeatherDay: React.FC<IDailyWeatherProps> = ({ date, weather, tempMin, tempMax, fahrenheit }) => {
 	const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 	const day = new Date(date * 1000);
 	const dayName = days[day.getDay()];
@@ -13,9 +13,13 @@ const WeatherDay: React.FC<IDailyWeatherProps> = ({ date, weather, tempMin, temp
 			<div className={styles.weatherIcon}>
 				<WeatherIcon mainWeather={weather} type='daily' />
 			</div>
-			<div className={styles.tempMax}>{Math.round(tempMax)}°c</div>
+			<div className={styles.tempMax}>
+				{fahrenheit ? Math.round(tempMax * 9) / 5 + 32 + '°' : Math.round(tempMax) + '°'}
+			</div>
 			<div className={styles.tempGradient}></div>
-			<div className={styles.tempMin}>{Math.round(tempMin)}°c</div>
+			<div className={styles.tempMin}>
+				{fahrenheit ? Math.round(tempMin * 9) / 5 + 32 + '°' : Math.round(tempMin) + '°'}
+			</div>
 		</div>
 	);
 };

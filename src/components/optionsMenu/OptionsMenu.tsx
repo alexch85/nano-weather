@@ -3,7 +3,13 @@ import styles from './OptionsMenu.module.scss';
 import cx from 'classnames';
 import { IOptionsMenu } from '../../interfaces';
 
-const OptionsMenu: React.FC<IOptionsMenu> = ({ optionsMenuHandler, setDarkModeHandler, darkMode }) => {
+const OptionsMenu: React.FC<IOptionsMenu> = ({
+	optionsMenuHandler,
+	setDarkModeHandler,
+	darkMode,
+	setFahrenheitHandler,
+	fahrenheit,
+}) => {
 	return (
 		<div className={styles.optionsMenu}>
 			<img alt='logo' src='/logo.svg' height='80px' />
@@ -14,10 +20,10 @@ const OptionsMenu: React.FC<IOptionsMenu> = ({ optionsMenuHandler, setDarkModeHa
 				</div>
 			</div>
 			<div className={styles.optionContainer}>
-				<p>Celius</p>
-				{/* <div className={styles.toggleContainer} onClick={toggleSelected}>
-					<div className={cx(styles.toggleBtn, selected ? '' : styles.disabled)} />
-				</div> */}
+				<p>Fahrenheit</p>
+				<div className={styles.toggleContainer} onClick={setFahrenheitHandler}>
+					<div className={cx(styles.toggleBtn, fahrenheit ? '' : styles.disabled)} />
+				</div>
 			</div>
 			<button className={styles.saveBtn} onClick={optionsMenuHandler}>
 				{' '}

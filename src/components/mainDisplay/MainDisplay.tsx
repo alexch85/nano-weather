@@ -24,6 +24,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 	city,
 	loading,
 	optionsMenuHandler,
+	fahrenheit,
 }) => {
 	return (
 		<BgWrapper screenWidth={screenWidth} city={city}>
@@ -36,12 +37,14 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 				<Loader />
 			) : (
 				<>
-					<div className={styles.tempContainer}>{Math.round(temp)}°c</div>
+					<div className={styles.tempContainer}>
+						{fahrenheit ? Math.round(temp * 9) / 5 + 32 + '°f' : Math.round(temp) + '°c'}
+					</div>
 					<div className={styles.weatherContainer}>
 						{/* <img alt='weather' src={weatherIcon} height='25px' /> */}
 						<WeatherIcon mainWeather={mainWeather} type='main' />
 					</div>
-					<div>Feels like {Math.round(feelsLike)}°C</div>
+					<div>Feels like {fahrenheit ? Math.round(temp * 9) / 5 + 32 + '°f' : Math.round(temp) + '°c'}</div>
 				</>
 			)}
 

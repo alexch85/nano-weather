@@ -15,6 +15,7 @@ const App: React.FC = () => {
 	const [loading, setLoading] = useState(false);
 	const [optionsModal, setOptionsModal] = useState(false);
 	const [darkMode, setDarkMode] = useState(false);
+	const [fahrenheit, setFahrenheit] = useState(false);
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [city, setCity] = useState<string | undefined>(undefined);
@@ -89,6 +90,10 @@ const App: React.FC = () => {
 		setDarkMode((darkMode) => !darkMode);
 	};
 
+	const setFahrenheitHandler = () => {
+		setFahrenheit((fahrenheit) => !fahrenheit);
+	};
+
 	const setCityHandler = (city: string) => {
 		setCity(city);
 	};
@@ -99,6 +104,7 @@ const App: React.FC = () => {
 	};
 
 	const { temp, humidity, feelsLike, windSpeed, mainWeather, cityName, error } = todayWeather;
+
 	return (
 		<div className={darkMode ? cx(styles.app, styles.dark) : styles.app}>
 			{error && (
@@ -111,6 +117,8 @@ const App: React.FC = () => {
 					<OptionsMenu
 						optionsMenuHandler={optionsModalHandler}
 						setDarkModeHandler={setDarkModeHandler}
+						setFahrenheitHandler={setFahrenheitHandler}
+						fahrenheit={fahrenheit}
 						darkMode={darkMode}
 					/>
 				</Backdrop>
@@ -129,12 +137,14 @@ const App: React.FC = () => {
 				city={city}
 				loading={loading}
 				optionsMenuHandler={optionsModalHandler}
+				fahrenheit={fahrenheit}
 			/>
 			<DailyWeatherDisplay
 				weeklyWeather={weeklyWeather}
 				searchMode={searchMode}
 				setCityHandler={setCityHandler}
 				darkMode={darkMode}
+				fahrenheit={fahrenheit}
 			/>
 		</div>
 	);
