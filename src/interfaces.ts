@@ -70,6 +70,7 @@ export interface INavProps {
 
 export interface IErrorModalProps {
 	closeErrorHandler: () => void;
+	darkMode: boolean;
 }
 
 export interface IWeatherIconProps {

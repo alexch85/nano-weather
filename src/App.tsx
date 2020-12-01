@@ -109,7 +109,7 @@ const App: React.FC = () => {
 		<div className={darkMode ? cx(styles.app, styles.dark) : styles.app}>
 			{error && (
 				<Backdrop>
-					<ErrorModal closeErrorHandler={closeErrorHandler} />
+					<ErrorModal closeErrorHandler={closeErrorHandler} darkMode={darkMode} />
 				</Backdrop>
 			)}
 			{optionsModal && (

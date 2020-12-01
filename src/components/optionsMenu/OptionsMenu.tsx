@@ -11,7 +11,7 @@ const OptionsMenu: React.FC<IOptionsMenu> = ({
 	fahrenheit,
 }) => {
 	return (
-		<div className={styles.optionsMenu}>
+		<div className={darkMode ? cx(styles.optionsMenu, styles.dark) : styles.optionsMenu}>
 			<img alt='logo' src='/logo.svg' height='80px' />
 			<div className={styles.optionContainer}>
 				<p>DarkMode</p>
