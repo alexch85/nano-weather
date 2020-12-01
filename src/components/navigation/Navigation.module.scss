@@ -9,4 +9,8 @@
 
 .navContainer img {
 	cursor: pointer;
+	padding: 0 5px;
+	@media (min-width: 650px) {
+		height: 2rem;
+	}
 }
