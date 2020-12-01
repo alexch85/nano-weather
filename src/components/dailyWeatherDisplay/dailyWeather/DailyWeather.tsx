@@ -14,11 +14,11 @@ const WeatherDay: React.FC<IDailyWeatherProps> = ({ date, weather, tempMin, temp
 				<WeatherIcon mainWeather={weather} type='daily' />
 			</div>
 			<div className={styles.tempMax}>
-				{fahrenheit ? Math.round(tempMax * 9) / 5 + 32 + '°' : Math.round(tempMax) + '°'}
+				{fahrenheit ? (Math.round(tempMax * 9) / 5 + 32).toFixed(0) + '°' : Math.round(tempMax) + '°'}
 			</div>
 			<div className={styles.tempGradient}></div>
 			<div className={styles.tempMin}>
-				{fahrenheit ? Math.round(tempMin * 9) / 5 + 32 + '°' : Math.round(tempMin) + '°'}
+				{fahrenheit ? (Math.round(tempMax * 9) / 5 + 32).toFixed(0) + '°' : Math.round(tempMin) + '°'}
 			</div>
 		</div>
 	);
