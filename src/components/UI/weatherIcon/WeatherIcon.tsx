@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './WeatherIcon.module.scss';
 import { IWeatherIconProps } from '../../../interfaces';
 
 const weatherIcon: React.FC<IWeatherIconProps> = ({ mainWeather, type }) => {
@@ -66,8 +67,8 @@ const weatherIcon: React.FC<IWeatherIconProps> = ({ mainWeather, type }) => {
 	}
 
 	return (
-		<div style={{ display: 'flex', alignItems: 'center' }}>
-			<img alt='weather' src={weatherIcon} height='30px' style={{ marginRight: '7px' }} />
+		<div className={styles.weatherIconContainer}>
+			<img alt='weather' src={weatherIcon} />
 			{type === 'main' && mainWeather}
 		</div>
 	);

@@ -41,28 +41,22 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
 						{fahrenheit ? (Math.round(temp * 9) / 5 + 32).toFixed(0) + '°f' : Math.round(temp) + '°c'}
 					</div>
 					<div className={styles.weatherContainer}>
-						{/* <img alt='weather' src={weatherIcon} height='25px' /> */}
 						<WeatherIcon mainWeather={mainWeather} type='main' />
 					</div>
-					<div>
+					<div className={styles.feelsLikeContainer}>
 						Feels like{' '}
-						{fahrenheit ? (Math.round(temp * 9) / 5 + 32).toFixed(0) + '°f' : Math.round(temp) + '°c'}
+						{fahrenheit ? (Math.round(feelsLike * 9) / 5 + 32).toFixed(0) + '°f' : Math.round(temp) + '°c'}
 					</div>
 				</>
 			)}
 
 			<div className={styles.sideContainer}>
 				<div className={styles.humidContainer}>
-					<img
-						alt='humidity'
-						src={humidityIcon}
-						height='15px'
-						style={{ marginRight: '5px', marginLeft: '-2px' }}
-					/>
+					<img alt='humidity' src={humidityIcon} />
 					{humidity}%
 				</div>
 				<div className={styles.windContainer}>
-					<img alt='wind' src={windFlag} height='12px' />
+					<img alt='wind' src={windFlag} />
 					North-west {windSpeed} meters per hour
 				</div>
 			</div>

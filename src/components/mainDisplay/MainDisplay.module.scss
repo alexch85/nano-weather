@@ -1,15 +1,13 @@
 @import 'themes.scss';
 
-.dateContainer {
-	box-sizing: border-box;
-	margin-bottom: 5px;
-	position: relative;
-}
 .tempContainer {
 	font-size: 4rem;
 	box-sizing: border-box;
 	margin: 40px auto 0;
 	overflow: hidden;
+	@media (min-width: 650px) {
+		font-size: 6rem;
+	}
 }
 
 .tempContainer p {
@@ -21,6 +19,15 @@
 	margin: -10px auto 0;
 	display: flex;
 	align-items: center;
+	@media (min-width: 650px) {
+		font-size: 3rem;
+	}
+}
+
+.feelsLikeContainer {
+	@media (min-width: 650px) {
+		font-size: 1.5rem;
+	}
 }
 
 .sideContainer {
@@ -34,6 +41,28 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	font-size: 1rem;
+	@media (min-width: 650px) {
+		font-size: 1.2rem;
+		margin: 18px;
+		margin-top: auto;
+	}
+}
+
+.humidContainer img {
+	height: 15px;
+	margin-right: 5px;
+	margin-left: -2px;
+	@media (min-width: 650px) {
+		height: 20px;
+		margin-right: 7px;
+	}
+}
+
+.windContainer img {
+	height: 12px;
+	@media (min-width: 650px) {
+		height: 15px;
+	}
 }
 
 .searchBtn {
