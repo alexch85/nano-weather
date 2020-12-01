@@ -24,7 +24,7 @@ const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler, darkMode }) =>
 
 	return (
 		<div className={darkMode ? styles.searchBoxContainerdark : styles.searchBoxContainer}>
-			<img alt='globe' src='/globe.png' height='30px' />
+			<img alt='globe' src={darkMode ? '/globe-white.png' : '/globe.png'} height='30px' />
 			{/* <h3>Enter location</h3> */}
 			<input
 				type='text'

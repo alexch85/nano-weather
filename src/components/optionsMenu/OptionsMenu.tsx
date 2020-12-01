@@ -14,7 +14,7 @@ const OptionsMenu: React.FC<IOptionsMenu> = ({
 		<div className={darkMode ? cx(styles.optionsMenu, styles.dark) : styles.optionsMenu}>
 			<img alt='logo' src='/logo.svg' height='80px' />
 			<div className={styles.optionContainer}>
-				<p>DarkMode</p>
+				<p>Dark Mode</p>
 				<div className={styles.toggleContainer} onClick={setDarkModeHandler}>
 					<div className={cx(styles.toggleBtn, darkMode ? '' : styles.disabled)} />
 				</div>
