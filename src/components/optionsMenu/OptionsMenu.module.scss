@@ -1,75 +1,75 @@
 @import 'themes.scss';
 
 .optionsMenu {
-	width: 50%;
-	background: #fff;
-	color: #333;
-	padding: 20px 20px 30px;
-	margin: 0 auto 100px;
-	z-index: 1000;
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	justify-content: center;
-	border-radius: 10px;
-	@media (min-width: 650px) {
-		max-width: 320px;
-		height: 340px;
-	}
+  width: 50%;
+  background: #fff;
+  color: #333;
+  padding: 20px 20px 30px;
+  margin: 0 auto 100px;
+  z-index: 1000;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  @media (min-width: 650px) {
+    max-width: 320px;
+    height: 340px;
+  }
 }
 
 .optionsMenu img {
-	margin: 10px 0;
-	@media (min-width: 650px) {
-		height: 100px;
-	}
+  margin: 10px 0;
+  @media (min-width: 650px) {
+    height: 100px;
+  }
 }
 
 .optionContainer {
-	display: flex;
-	margin: 0px auto;
-	width: 140px;
-	align-items: center;
-	justify-content: space-between;
-	font-weight: bold;
+  display: flex;
+  margin: 0px auto;
+  width: 140px;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
 }
 
 .toggleContainer {
-	width: 40px;
-	background: #c4c4c4;
-	cursor: pointer;
-	user-select: none;
-	border-radius: 30px;
-	padding: 1px 2px;
-	height: 24px;
-	position: relative;
-	display: flex;
-	align-items: center;
+  width: 40px;
+  background: #c4c4c4;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 30px;
+  padding: 1px 2px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .toggleBtn {
-	font-size: 14px;
-	line-height: 16px;
-	font-weight: bold;
-	cursor: pointer;
-	background: map-get($colors, main-purple);
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 22px;
-	border-radius: 50%;
-	box-sizing: border-box;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-	position: absolute;
-	left: 20px;
-	transition: all 0.3s ease;
-	height: 22px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: map-get($colors, main-purple);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 20px;
+  transition: all 0.3s ease;
+  height: 22px;
 }
 
 .disabled {
-	background-color: #707070;
-	left: 2px;
+  background-color: #707070;
+  left: 2px;
 }
 
 // .closeOptionsBtn {
@@ -84,20 +84,21 @@
 // }
 
 .saveBtn {
-	@include button;
-	margin-top: 20px;
-	width: 100%;
-	max-width: 150px;
-	@media (min-width: 650px) {
-		width: 150px;
-		align-self: center;
-		&:hover,
-		&:focus {
-			background: map-get($colors, main-pink);
-		}
-	}
+  @include button;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 150px;
+  @media (min-width: 650px) {
+    width: 150px;
+    align-self: center;
+    &:hover,
+    &:focus {
+      background: map-get($colors, main-pink);
+    }
+  }
 }
 
 .dark {
-	@include dark;
+  @include dark;
+  color: #fff;
 }
