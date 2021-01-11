@@ -1,123 +1,118 @@
 @import 'themes.scss';
 
 .tempContainer {
-	font-size: 4rem;
-	box-sizing: border-box;
-	margin: 40px auto 0;
-	overflow: hidden;
-	@media (min-width: 650px) {
-		font-size: 6rem;
-	}
+  font-size: 4rem;
+  box-sizing: border-box;
+  margin: 0px auto 0;
+  overflow: hidden;
+  font-weight: 400;
+  @media (min-width: 650px) {
+    font-size: 4.5rem;
+  }
 }
 
 .tempContainer p {
-	margin: 0;
+  margin: 0;
 }
 
 .weatherContainer {
-	font-size: 2rem;
-	margin: -10px auto 0;
-	display: flex;
-	align-items: center;
-	@media (min-width: 650px) {
-		font-size: 3rem;
-	}
+  font-size: 2rem;
+  margin: 35px auto 0;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
 }
 
 .feelsLikeContainer {
-	@media (min-width: 650px) {
-		font-size: 1.5rem;
-	}
+  margin-top: -10px;
+  font-weight: 300;
+  @media (min-width: 650px) {
+    font-size: 1.4rem;
+  }
 }
 
 .sideContainer {
-	align-self: flex-start;
-	padding: 5px;
-	margin: 10px;
-	height: 45px;
-	margin-top: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
-	font-size: 1rem;
-	@media (min-width: 650px) {
-		font-size: 1.2rem;
-		margin: 18px;
-		margin-top: auto;
-	}
+  align-self: flex-start;
+  padding: 5px;
+  margin: 10px;
+  height: 45px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 300;
+  @media (min-width: 650px) {
+    height: 50px;
+    font-size: 1.1rem;
+    margin: 18px;
+    margin-top: auto;
+  }
 }
 
 .humidContainer img {
-	height: 15px;
-	margin-right: 5px;
-	margin-left: -2px;
-	@media (min-width: 650px) {
-		height: 20px;
-		margin-right: 7px;
-	}
+  height: 15px;
+  margin-right: 5px;
+  margin-left: -2px;
+  @media (min-width: 650px) {
+    height: 20px;
+    margin-right: 7px;
+  }
 }
 
 .windContainer img {
-	height: 12px;
-	@media (min-width: 650px) {
-		height: 15px;
-	}
+  height: 12px;
+  @media (min-width: 650px) {
+    height: 15px;
+  }
 }
 
 .searchBtn {
-	align-self: flex-end;
-	border-radius: 50%;
-	padding: 15px;
-	font-size: 2.2rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
-	outline: none;
-	margin-right: 10px;
-	background: map-get($colors, main-pink);
-	color: #fff;
-	border: 3px solid #fff;
-	position: absolute;
-	box-shadow: -1px 1px 5px rgba(150, 150, 150, 0.69);
-	bottom: -40px;
-	right: 20px;
-	height: 60px;
-	width: 60px;
-	&:focus,
-	&:hover,
-	&:active {
-		background: map-get($colors, main-purple);
-		cursor: pointer;
-	}
-	@media (max-width: 768px) {
-		margin-right: 0px;
-		bottom: -25px;
-		height: 40px;
-		width: 40px;
-		font-size: 1.8rem;
-		&:focus,
-		&:hover,
-		&:active {
-			background: map-get($colors, main-pink);
-		}
-	}
+  align-self: flex-end;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  margin-right: 0px;
+  background: map-get($colors, main-pink);
+  color: #fff;
+  border: 3px solid #fff;
+  position: absolute;
+  box-shadow: -1px 1px 5px rgba(150, 150, 150, 0.69);
+  bottom: -25px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  &:focus,
+  &:hover,
+  &:active {
+    background: map-get($colors, main-purple);
+    cursor: pointer;
+  }
+  @media (min-width: 768px) {
+    margin-right: 10px;
+  }
 }
 
 .searchIcon {
-	-webkit-animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	@keyframes rotate-in-center {
-		0% {
-			-webkit-transform: rotate(-360deg);
-			transform: rotate(360deg);
-			opacity: 0;
-		}
-		100% {
-			-webkit-transform: rotate(0);
-			transform: rotate(0);
-			opacity: 1;
-		}
-	}
+  -webkit-animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @keyframes rotate-in-center {
+    0% {
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(360deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      opacity: 1;
+    }
+  }
 }

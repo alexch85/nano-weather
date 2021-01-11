@@ -1,12 +1,9 @@
 .weatherIconContainer {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .weatherIconContainer img {
-	height: 30px;
-	margin-right: 7px;
-	@media (min-width: 650px) {
-		height: 42px;
-	}
+  height: 30px;
+  margin-right: 7px;
 }

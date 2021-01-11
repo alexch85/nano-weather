@@ -1,40 +1,40 @@
 $colors: (
-	main-purple: #a244f5,
-	main-pink: #e41de8,
-	main-dim: #18191a,
-	main-gray: #cccccc,
-	temp-gradient-horizontal: linear-gradient(to right, #7b61e2, #e91ee9),
-	temp-gradient-vertical: linear-gradient(to top, #7b61e2, #e91ee9),
+  main-purple: #a244f5,
+  main-pink: #e41de8,
+  main-dim: #18191a,
+  main-gray: #cccccc,
+  temp-gradient-horizontal: linear-gradient(to right, #7b61e2, #e91ee9),
+  temp-gradient-vertical: linear-gradient(to top, #7b61e2, #e91ee9),
 );
 
 @mixin modal($height: 100) {
-	height: $height;
-	margin: 0 auto;
-	padding: 10px 20px 20px;
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	background: #fff;
-	border-radius: 5px;
-	z-index: 1000;
+  height: $height;
+  margin: 0 auto;
+  padding: 10px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background: #fff;
+  border-radius: 5px;
+  z-index: 1000;
 }
 
 @mixin button {
-	padding: 10px 10px;
-	background: map-get($colors, main-purple);
-	color: #fff;
-	border: none;
-	font-size: 1rem;
-	outline: none;
-	border-radius: 25px;
-	cursor: pointer;
-	:focus,
-	:hover {
-		background: map-get($colors, main-pink);
-	}
+  padding: 10px 10px;
+  background: map-get($colors, main-purple);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  :focus,
+  :hover {
+    background: map-get($colors, main-pink);
+  }
 }
 
 @mixin dark {
-	background: #333;
-	color: #fff;
+  background: #333;
+  color: #fff;
 }

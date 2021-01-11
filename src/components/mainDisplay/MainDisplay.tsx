@@ -12,63 +12,67 @@ import { RiCloseFill } from 'react-icons/ri';
 import Loader from '../UI/loader/Loader';
 
 const MainDisplay: React.FC<IMainDisplayProps> = ({
-	temp,
-	humidity,
-	feelsLike,
-	windSpeed,
-	mainWeather,
-	cityName,
-	searchModeToggle,
-	searchMode,
-	screenWidth,
-	city,
-	loading,
-	optionsMenuHandler,
-	fahrenheit,
+  temp,
+  humidity,
+  feelsLike,
+  windSpeed,
+  mainWeather,
+  cityName,
+  searchModeToggle,
+  searchMode,
+  screenWidth,
+  city,
+  loading,
+  optionsMenuHandler,
+  fahrenheit,
 }) => {
-	return (
-		<BgWrapper screenWidth={screenWidth} city={city}>
-			<Navigation optionsMenuHandler={optionsMenuHandler} />
-			<div className={styles.locationContainer}>
-				<img alt='location' src={location} height='15px' />
-				{cityName}
-			</div>
-			{loading ? (
-				<Loader />
-			) : (
-				<>
-					<div className={styles.tempContainer}>
-						{fahrenheit ? (Math.round(temp * 9) / 5 + 32).toFixed(0) + '°f' : Math.round(temp) + '°c'}
-					</div>
-					<div className={styles.weatherContainer}>
-						<WeatherIcon mainWeather={mainWeather} type='main' />
-					</div>
-					<div className={styles.feelsLikeContainer}>
-						Feels like{' '}
-						{fahrenheit ? (Math.round(feelsLike * 9) / 5 + 32).toFixed(0) + '°f' : Math.round(temp) + '°c'}
-					</div>
-				</>
-			)}
+  const celsiusTemp = Math.round(temp) + '°c';
+  const fahrenheitTemp = (Math.round(temp * 9) / 5 + 32).toFixed(0) + '°f';
+  const feelsLikeCelsius = Math.round(feelsLike) + '°c';
+  const feelsLikeFahrenheit =
+    (Math.round(feelsLike * 9) / 5 + 32).toFixed(0) + '°f';
+  return (
+    <BgWrapper screenWidth={screenWidth} city={city}>
+      <Navigation optionsMenuHandler={optionsMenuHandler} />
+      <div className={styles.locationContainer}>
+        <img alt='location' src={location} height='15px' />
+        {cityName}
+      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className={styles.weatherContainer}>
+            <WeatherIcon mainWeather={mainWeather} type='main' />
+          </div>
+          <div className={styles.tempContainer}>
+            {fahrenheit ? fahrenheitTemp : celsiusTemp}
+          </div>
+          <div className={styles.feelsLikeContainer}>
+            Feels like {fahrenheit ? feelsLikeFahrenheit : feelsLikeCelsius}
+          </div>
+        </>
+      )}
 
-			<div className={styles.sideContainer}>
-				<div className={styles.humidContainer}>
-					<img alt='humidity' src={humidityIcon} />
-					{humidity}%
-				</div>
-				<div className={styles.windContainer}>
-					<img alt='wind' src={windFlag} />
-					North-west {windSpeed} meters per hour
-				</div>
-			</div>
-			<div className={styles.searchBtn} onClick={searchModeToggle}>
-				{!searchMode ? (
-					<FaSearchLocation className={styles.searchIcon} />
-				) : (
-					<RiCloseFill className={styles.searchIcon} />
-				)}
-			</div>
-		</BgWrapper>
-	);
+      <div className={styles.sideContainer}>
+        <div className={styles.humidContainer}>
+          <img alt='humidity' src={humidityIcon} />
+          {humidity}%
+        </div>
+        <div className={styles.windContainer}>
+          <img alt='wind' src={windFlag} />
+          North-west {windSpeed} meters per hour
+        </div>
+      </div>
+      <div className={styles.searchBtn} onClick={searchModeToggle}>
+        {!searchMode ? (
+          <FaSearchLocation className={styles.searchIcon} />
+        ) : (
+          <RiCloseFill className={styles.searchIcon} />
+        )}
+      </div>
+    </BgWrapper>
+  );
 };
 
 export default MainDisplay;
