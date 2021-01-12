@@ -1,102 +1,109 @@
 @import 'themes.scss';
 
 .searchBoxContainer {
-	display: flex;
-	flex-direction: column;
-	width: 300px;
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-	animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .searchBoxContainer img {
-	align-self: center;
-	height: 70px;
-	@media (min-width: 650px) {
-		height: 100px;
-	}
+  align-self: center;
+  height: 70px;
+  @media (min-width: 650px) {
+    height: 100px;
+  }
 }
 .searchBoxContainerdark img {
-	align-self: center;
-	height: 70px;
-	@media (min-width: 650px) {
-		height: 100px;
-	}
+  align-self: center;
+  height: 70px;
+  @media (min-width: 650px) {
+    height: 100px;
+  }
 }
 
 .searchBoxContainer input {
-	border: none;
-	border-bottom: 1.5px solid #333;
-	outline: none;
-	background: none;
-	font-size: 1.1rem;
-	margin: 25px auto 20px;
-	width: 90%;
-	&:focus,
-	&:active {
-		border-bottom: 1.5px solid map-get($colors, main-pink);
-	}
+  border: none;
+  border-bottom: 1.5px solid #333;
+  outline: none;
+  background: none;
+  font-size: 1.1rem;
+  margin: 10px auto 10px;
+  width: 90%;
+  &:focus,
+  &:active {
+    border-bottom: 1.5px solid map-get($colors, main-pink);
+  }
+  @media (min-width: 380px) {
+    margin: 25px auto 20px;
+  }
 }
 .searchBoxContainerdark input {
-	border: none;
-	border-bottom: 1.5px solid #ccc;
-	outline: none;
-	color: white;
-	background: none;
-	font-size: 1.1rem;
-	margin: 25px auto 20px;
-	width: 90%;
-	&:focus,
-	&:active {
-		border-bottom: 1.5px solid map-get($colors, main-pink);
-	}
-	&::placeholder {
-		color: #ccc;
-	}
+  border: none;
+  border-bottom: 1.5px solid #ccc;
+  outline: none;
+  color: white;
+  background: none;
+  font-size: 1.1rem;
+  margin: 1opx auto 10px;
+  width: 90%;
+  &:focus,
+  &:active {
+    border-bottom: 1.5px solid map-get($colors, main-pink);
+  }
+  &::placeholder {
+    color: #ccc;
+  }
+  @media (min-width: 380px) {
+    margin: 25px auto 20px;
+  }
 }
 
 .closeIcon {
-	align-self: flex-end;
-	font-size: 1.5rem;
-	cursor: pointer;
-	:focus,
-	:hover {
-		color: map-get($colors, main-purple);
-	}
-	@media (max-width: 768px) {
-		align-self: center;
-	}
+  align-self: flex-end;
+  font-size: 1.5rem;
+  cursor: pointer;
+  :focus,
+  :hover {
+    color: map-get($colors, main-purple);
+  }
+  @media (max-width: 768px) {
+    align-self: center;
+  }
 }
 
 .selectBtn {
-	@include button;
-	width: 95%;
-	margin: 0 auto;
-	&:disabled {
-		cursor: not-allowed;
-		background: #ccc;
-	}
+  @include button;
+  width: 95%;
+  margin: 0 auto;
+  &:disabled {
+    cursor: not-allowed;
+    background: #ccc;
+  }
 }
 
 .dark {
-	color: #fff;
+  color: #fff;
 }
 
 @-webkit-keyframes scale-up-center {
-	0% {
-		-webkit-transform: scale(0.5);
-		transform: scale(0.5);
-	}
-	100% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-	}
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 @keyframes scale-up-center {
-	0% {
-		-webkit-transform: scale(0.5);
-		transform: scale(0.5);
-	}
-	100% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-	}
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
