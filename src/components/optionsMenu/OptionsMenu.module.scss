@@ -2,6 +2,7 @@
 
 .optionsMenu {
   width: 50%;
+  position: relative;
   background: #fff;
   color: #333;
   padding: 20px 20px 30px;
@@ -72,16 +73,18 @@
   left: 2px;
 }
 
-// .closeOptionsBtn {
-// 	align-self: flex-end;
-// 	font-size: 2rem;
-// 	margin-bottom: 10px;
-// 	cursor: pointer;
-// 	&:hover,
-// 	&:focus {
-// 		color: map-get($colors, main-pink);
-// 	}
-// }
+.closeOptionsBtn {
+  align-self: flex-end;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: map-get($colors, main-pink);
+  }
+}
 
 .saveBtn {
   @include button;

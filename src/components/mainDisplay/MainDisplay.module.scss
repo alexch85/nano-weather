@@ -16,7 +16,7 @@
 }
 
 .weatherContainer {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 35px auto 0;
   display: flex;
   align-items: center;
@@ -24,8 +24,9 @@
 }
 
 .feelsLikeContainer {
-  margin-top: -10px;
+  margin-top: -8px;
   font-weight: 300;
+  font-size: 1.3rem;
   @media (min-width: 650px) {
     font-size: 1.4rem;
   }
@@ -95,7 +96,7 @@
     cursor: pointer;
   }
   @media (min-width: 768px) {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }
 
