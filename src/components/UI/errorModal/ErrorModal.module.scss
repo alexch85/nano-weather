@@ -2,6 +2,7 @@
 
 .errorModal {
   @include modal;
+  @include scale-up;
 }
 
 .closeBtn {

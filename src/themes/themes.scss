@@ -7,6 +7,10 @@ $colors: (
   temp-gradient-vertical: linear-gradient(to top, #7b61e2, #e91ee9),
 );
 
+@mixin scale-up {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
 @mixin modal($height: 100) {
   height: $height;
   margin: 0 auto;
@@ -31,5 +35,16 @@ $colors: (
   :focus,
   :hover {
     background: map-get($colors, main-pink);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
