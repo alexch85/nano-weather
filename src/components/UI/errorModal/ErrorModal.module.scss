@@ -1,15 +1,11 @@
 @import 'themes.scss';
 
 .errorModal {
-	@include modal;
+  @include modal;
 }
 
 .closeBtn {
-	@include button;
-	width: 55%;
-	margin: 0 auto;
-}
-
-.dark {
-	@include dark;
+  @include button;
+  width: 55%;
+  margin: 0 auto;
 }

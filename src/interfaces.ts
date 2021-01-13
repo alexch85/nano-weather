@@ -28,10 +28,8 @@ export interface IMainDisplayProps {
 
 export interface IOptionsMenu {
   optionsMenuHandler: () => void;
-  setDarkModeHandler: () => void;
   setFahrenheitHandler: () => void;
   fahrenheit: boolean;
-  darkMode: boolean;
 }
 
 export interface IWrapperProps {
@@ -46,7 +44,6 @@ export interface IBackdropWrapperProps {
 
 export interface ISearchModalProps {
   setCityHandler: (city: string) => void;
-  darkMode: boolean;
 }
 
 export interface IDailyWeatherProps {
@@ -55,13 +52,11 @@ export interface IDailyWeatherProps {
   tempMin: number;
   tempMax: number;
   fahrenheit: boolean;
-  darkMode: boolean;
 }
 export interface IDailyWeatherDisplayProps {
   weeklyWeather: IWeeklyWeatherProps;
   setCityHandler: (city: string) => void;
   searchMode: boolean;
-  darkMode: boolean;
   fahrenheit: boolean;
 }
 
@@ -71,7 +66,6 @@ export interface INavProps {
 
 export interface IErrorModalProps {
   closeErrorHandler: () => void;
-  darkMode: boolean;
 }
 
 export interface IWeatherIconProps {

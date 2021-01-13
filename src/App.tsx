@@ -12,14 +12,12 @@ import OptionsMenu from './components/optionsMenu/OptionsMenu';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
 import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
-import cx from 'classnames';
 
 const App: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [searchMode, setSearchMode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [optionsModal, setOptionsModal] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [fahrenheit, setFahrenheit] = useState(false);
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
@@ -94,10 +92,6 @@ const App: React.FC = () => {
     setOptionsModal((optionsModal) => !optionsModal);
   };
 
-  const setDarkModeHandler = () => {
-    setDarkMode((darkMode) => !darkMode);
-  };
-
   const setFahrenheitHandler = () => {
     setFahrenheit((fahrenheit) => !fahrenheit);
   };
@@ -122,23 +116,18 @@ const App: React.FC = () => {
   } = todayWeather;
 
   return (
-    <div className={darkMode ? cx(styles.app, styles.dark) : styles.app}>
+    <div className={styles.app}>
       {error && (
         <Backdrop>
-          <ErrorModal
-            closeErrorHandler={closeErrorHandler}
-            darkMode={darkMode}
-          />
+          <ErrorModal closeErrorHandler={closeErrorHandler} />
         </Backdrop>
       )}
       {optionsModal && (
         <Backdrop>
           <OptionsMenu
             optionsMenuHandler={optionsModalToggleHandler}
-            setDarkModeHandler={setDarkModeHandler}
             setFahrenheitHandler={setFahrenheitHandler}
             fahrenheit={fahrenheit}
-            darkMode={darkMode}
           />
         </Backdrop>
       )}
@@ -162,7 +151,6 @@ const App: React.FC = () => {
         weeklyWeather={weeklyWeather}
         searchMode={searchMode}
         setCityHandler={setCityHandler}
-        darkMode={darkMode}
         fahrenheit={fahrenheit}
       />
     </div>

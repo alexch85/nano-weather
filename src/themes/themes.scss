@@ -33,8 +33,3 @@ $colors: (
     background: map-get($colors, main-pink);
   }
 }
-
-@mixin dark {
-  background: #222;
-  color: #fff;
-}

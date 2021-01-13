@@ -6,13 +6,11 @@ import {
 } from '../../interfaces';
 import SearchModal from '../searchModal/SearchModal';
 import DailyWeather from './dailyWeather/DailyWeather';
-import cx from 'classnames';
 
 const DailyWeatherDisplay: React.FC<IDailyWeatherDisplayProps> = ({
   weeklyWeather,
   searchMode,
   setCityHandler,
-  darkMode,
   fahrenheit,
 }) => {
   const weeklyWeatherForcast = weeklyWeather.map(
@@ -24,19 +22,13 @@ const DailyWeatherDisplay: React.FC<IDailyWeatherDisplayProps> = ({
         tempMin={day.tempMin}
         weather={day.weather}
         fahrenheit={fahrenheit}
-        darkMode={darkMode}
       />
     ),
   );
   return (
-    <div
-      className={
-        darkMode
-          ? cx(styles.dailyWeatheContainer, styles.dark)
-          : styles.dailyWeatheContainer
-      }>
+    <div className={styles.dailyWeatheContainer}>
       {searchMode ? (
-        <SearchModal setCityHandler={setCityHandler} darkMode={darkMode} />
+        <SearchModal setCityHandler={setCityHandler} />
       ) : (
         <div className={styles.weatherDays}>{weeklyWeatherForcast}</div>
       )}
