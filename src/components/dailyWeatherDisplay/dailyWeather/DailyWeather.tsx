@@ -10,6 +10,7 @@ const WeatherDay: React.FC<IDailyWeatherProps> = ({
   tempMax,
   fahrenheit,
 }) => {
+  //get day name in specific format
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const day = new Date(date * 1000);
   const dayName = days[day.getDay()];

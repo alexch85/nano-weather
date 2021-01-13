@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const APIkey: string | undefined = process.env.REACT_APP_WEATHER_API_KEY;
 
+//fetch weather from api by latitude and longitude or by city name
 export const fetchWeather = async (
   lat: number,
   lon: number,
@@ -57,6 +58,7 @@ export const fetchWeather = async (
   }
 };
 
+//fetch weather for 7 week days
 export const fetch7Days = async (lat: number, lon: number) => {
   try {
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=hourly&appid=${APIkey}`;
@@ -74,6 +76,7 @@ export const fetch7Days = async (lat: number, lon: number) => {
         tempMax: i.temp.max,
       };
     });
+    //remove first day from array
     sevenDays.shift();
     console.log(sevenDays);
     return sevenDays;

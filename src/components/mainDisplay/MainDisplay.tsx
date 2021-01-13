@@ -26,6 +26,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
   optionsMenuHandler,
   fahrenheit,
 }) => {
+  //temperature formats
   const celsiusTemp = Math.round(temp) + '°c';
   const fahrenheitTemp = (Math.round(temp * 9) / 5 + 32).toFixed(0) + '°f';
   const feelsLikeCelsius = Math.round(feelsLike) + '°c';

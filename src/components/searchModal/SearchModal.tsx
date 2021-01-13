@@ -5,16 +5,19 @@ import { ISearchModalProps } from '../../interfaces';
 const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
   const [cityValue, setCityValue] = useState('');
 
+  //set city value
   const setCityValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     setCityValue(event.target.value);
   };
 
+  // set city handler and reset the city value to ''
   const searchByCity = () => {
     setCityHandler(cityValue);
     setCityValue('');
   };
 
+  //on key press enter handler
   const searchByCityEnter = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter') {
       setCityHandler(cityValue);
@@ -25,7 +28,6 @@ const SearchBox: React.FC<ISearchModalProps> = ({ setCityHandler }) => {
   return (
     <div className={styles.searchBoxContainer}>
       <img alt='globe' src={'/globe.png'} height='30px' />
-      {/* <h3>Enter location</h3> */}
       <input
         type='text'
         placeholder='Enter City Name...'

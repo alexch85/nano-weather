@@ -4,13 +4,18 @@ import React, {
   useCallback,
   useLayoutEffect,
 } from 'react';
-import { fetch7Days, fetchWeather } from './api';
 import styles from './App.module.scss';
+
+import { fetch7Days, fetchWeather } from './api';
+
+//import components
 import DailyWeatherDisplay from './components/dailyWeatherDisplay/DailyWeatherDisplay';
 import MainDisplay from './components/mainDisplay/MainDisplay';
 import OptionsMenu from './components/optionsMenu/OptionsMenu';
 import Backdrop from './components/UI/backdrop/Backdrop';
 import ErrorModal from './components/UI/errorModal/ErrorModal';
+
+//import interfaces
 import { ITodayWeatherProps, IWeeklyWeatherProps } from './interfaces';
 
 const App: React.FC = () => {
@@ -22,6 +27,7 @@ const App: React.FC = () => {
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [city, setCity] = useState<string | undefined>(undefined);
+  const [weeklyWeather, setWeeklyWeather] = useState<IWeeklyWeatherProps>([]);
   const [todayWeather, setTodayWeather] = useState<ITodayWeatherProps>({
     temp: 0,
     humidity: 0,
@@ -33,7 +39,8 @@ const App: React.FC = () => {
     cityName: '',
     error: false,
   });
-  //Getting the screen width on window resize
+
+  //getting the screen width on window resize
   useLayoutEffect(() => {
     const windowResizeHandler = () => setScreenWidth(window.innerWidth);
     window.addEventListener('resize', windowResizeHandler);
@@ -42,8 +49,7 @@ const App: React.FC = () => {
     };
   }, []);
 
-  const [weeklyWeather, setWeeklyWeather] = useState<IWeeklyWeatherProps>([]);
-
+  //check for geolocation in brower and get the latitude and longitude coordinates
   useEffect(() => {
     if ('geolocation' in navigator) {
       console.log('Available');
@@ -56,7 +62,9 @@ const App: React.FC = () => {
     }
   }, []);
 
-  //Fetch methods from API
+  //FETCH METHODS FROM API
+
+  //fetch current weather by longitude and latitude or city name
   const fetchAPI = useCallback(
     async (lat: number, lon: number, city: string | undefined) => {
       setLoading(true);
@@ -66,6 +74,7 @@ const App: React.FC = () => {
     [],
   );
 
+  //fetch weeklyWeather by latitude and longitude
   const fetchWeeklyWeather = useCallback(async (lat: number, lon: number) => {
     setLoading(true);
     setWeeklyWeather(await fetch7Days(lat, lon));
@@ -73,11 +82,12 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log(lat, lon);
+    // console.log(lat, lon);
     fetchAPI(lat, lon, city);
     fetchWeeklyWeather(lat, lon);
   }, [fetchAPI, fetchWeeklyWeather, lat, lon, city]);
 
+  //toggle search weather by city
   const toggleSearchModeHandler = () => {
     if (searchMode) {
       setSearchMode((prevSearchMode) => !prevSearchMode);
@@ -88,10 +98,12 @@ const App: React.FC = () => {
     }
   };
 
+  //toggle options menu
   const optionsModalToggleHandler = () => {
     setOptionsModal((optionsModal) => !optionsModal);
   };
 
+  //set fahrenheit or celcius values
   const setFahrenheitHandler = () => {
     setFahrenheit((fahrenheit) => !fahrenheit);
   };
