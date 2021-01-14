@@ -52,7 +52,6 @@ const App: React.FC = () => {
   //check for geolocation in brower and get the latitude and longitude coordinates
   useEffect(() => {
     if ('geolocation' in navigator) {
-      console.log('Available');
       navigator.geolocation.getCurrentPosition(function (position) {
         setLat(position.coords.latitude);
         setLon(position.coords.longitude);
@@ -66,7 +65,7 @@ const App: React.FC = () => {
 
   //fetch current weather by longitude and latitude or city name
   const fetchAPI = useCallback(
-    async (lat: number, lon: number, city: string | undefined) => {
+    async (lat: number, lon: number, city?: string | undefined) => {
       setLoading(true);
       setTodayWeather(await fetchWeather(lat, lon, city));
       setLoading(false);
@@ -82,7 +81,6 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // console.log(lat, lon);
     fetchAPI(lat, lon, city);
     fetchWeeklyWeather(lat, lon);
   }, [fetchAPI, fetchWeeklyWeather, lat, lon, city]);
@@ -113,8 +111,8 @@ const App: React.FC = () => {
   };
 
   const closeErrorHandler = () => {
-    setCity(undefined);
-    fetchAPI(lat, lon, city);
+    setCity('');
+    fetchAPI(lat, lon);
   };
 
   const {

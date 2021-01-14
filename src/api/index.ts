@@ -25,10 +25,8 @@ export const fetchWeather = async (
         name,
       },
     } = await axios.get(url);
-    console.log(temp, humidity, weather);
     // const [destructuredWeather] = weather;
     const [{ main }] = weather;
-    console.log(weather);
 
     return {
       temp,
@@ -42,8 +40,6 @@ export const fetchWeather = async (
       error: false,
     };
   } catch (error) {
-    console.log(`error ${error} - something went wrong`);
-
     return {
       temp: 0,
       humidity: 0,
@@ -65,7 +61,6 @@ export const fetch7Days = async (lat: number, lon: number) => {
     const {
       data: { daily },
     } = await axios.get(url);
-    // console.log(daily);
 
     const sevenDays = daily.map((i: any) => {
       const [{ main }] = i.weather;
@@ -78,7 +73,6 @@ export const fetch7Days = async (lat: number, lon: number) => {
     });
     //remove first day from array
     sevenDays.shift();
-    console.log(sevenDays);
     return sevenDays;
   } catch (error) {
     console.log(`error ${error} - something went wrong`);

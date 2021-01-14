@@ -14,7 +14,6 @@ const BgWrapper: React.FC<IWrapperProps> = ({
   const setBackgroundHandler = () => {
     const dateNow = new Date();
     const timeNow = dateNow.getHours();
-    // console.log(timeNow);
 
     let background = '';
     //if we have city value use globe background
