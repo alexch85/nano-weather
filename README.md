@@ -8,15 +8,15 @@ This project uses Typescript for all its components, Sass library to style the a
 
 ## Project Screen Shots
 
-![desktop-weather](https://i.postimg.cc/G34vdqb8/nanoweather-desktop-1.jpg)
+![desktop-weather](https://i.postimg.cc/LhdtwRMz/nanoweather-desktop-1.jpg)
 
-![desktop-search](https://i.postimg.cc/K8DMJWDV/nanoweather-desktop-2.jpg)
+![desktop-search](https://i.postimg.cc/xjBBnzfP/nanoweather-desktop-2.jpg)
 
-![mobile-screen](https://i.postimg.cc/RZBt1mKK/nanoweather-mobile-weather.jpg)
+![mobile-screen](https://i.postimg.cc/fRNF0Q0t/nanoweather-mobile-weather.jpg)
 
-![mobile-search](https://i.postimg.cc/xTHHb8J9/nanoweather-mobile-search.jpg)
+![mobile-search](https://i.postimg.cc/K8DWPpn9/nanoweather-mobile-search.jpg)
 
-![mobile-options](https://i.postimg.cc/ZYXpRpqf/nanoweather-mobile-options.jpg)
+![mobile-options](https://i.postimg.cc/bNbWJwdf/nanoweather-mobile-options.jpg)
 
 ## Installation and Setup Instructions
 
