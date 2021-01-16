@@ -36,7 +36,7 @@ const MainDisplay: React.FC<IMainDisplayProps> = ({
     <BgWrapper screenWidth={screenWidth} city={city}>
       <Navigation optionsMenuHandler={optionsMenuHandler} />
       <div className={styles.locationContainer}>
-        <img alt='location' src={location} height='15px' />
+        <img alt='location' src={location} height='15px' width='9px' />
         {cityName}
       </div>
       {loading ? (

@@ -65,20 +65,28 @@
   }
 }
 
-.humidContainer img {
-  height: 15px;
-  margin-right: 5px;
-  margin-left: -2px;
-  @media (min-width: 650px) {
-    height: 20px;
-    margin-right: 7px;
+.humidContainer {
+  display: flex;
+  align-items: center;
+  img {
+    height: 15px;
+    margin-right: 5px;
+    margin-left: -2px;
+    @media (min-width: 650px) {
+      height: 20px;
+      margin-right: 7px;
+    }
   }
 }
 
-.windContainer img {
-  height: 12px;
-  @media (min-width: 650px) {
-    height: 15px;
+.windContainer {
+  display: flex;
+  align-items: center;
+  img {
+    height: 12px;
+    @media (min-width: 650px) {
+      height: 15px;
+    }
   }
 }
 
